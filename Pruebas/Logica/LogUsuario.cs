@@ -6,7 +6,6 @@ using System.Windows.Forms;
 
 namespace PracticaLaboratorio2.Pruebas.Logica
 {
-    
     class LogUsuario
     {
         Conexion conexion = new Conexion();
@@ -16,8 +15,8 @@ namespace PracticaLaboratorio2.Pruebas.Logica
             String instruccionSecundaria, instruccionPrincipal;
             NpgsqlDataReader datosObtenidos;
 
-            instruccionSecundaria = "select * from f_obtener_usuario_especifico ('" + usuario.User + "', '" + usuario.Clave + "')";
-            instruccionPrincipal = "select f_insertar_tabla_usuario ('" + usuario.User + "', '" + usuario.Clave + "', '" + usuario.Perfil + "')";
+            instruccionSecundaria = "select * from t_usuario where vc_usuario = " + usuario.User + " and vc_clave = " + usuario.Clave;
+            instruccionPrincipal = "select f_insertar_usuario ('" + usuario.Perfil + "', '" + usuario.User + "', '" + usuario.Clave + "')";
 
             if (usuario.User != "" && usuario.Clave != "")
             {

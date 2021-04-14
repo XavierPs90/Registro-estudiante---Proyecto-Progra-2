@@ -34,8 +34,6 @@ namespace PracticaLaboratorio2.Pruebas.Vista
             usuario.Clave = txtClave.Text.ToLower();
             usuario.Perfil = "estudiante";
             logUsuario.RegistrarUsuario(usuario, confirmaClave);
-
-            
         }
     }
 }

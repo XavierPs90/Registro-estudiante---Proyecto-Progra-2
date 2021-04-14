@@ -22,7 +22,7 @@ $$
 $$
 language sql
 --------------------------------------------------------------
-select * from f_eliminar_carrera(7)
+select from f_eliminar_carrera(8)
 select * from t_carrera
 --------------------------------------------------------------
 --------------------------------------------------------------
@@ -35,7 +35,7 @@ $$
 $$
 language sql
 --------------------------------------------------------------
-select * from f_modificar_carrera('derecho', 8)
+select from f_modificar_carrera('derecho', 8)
 select * from t_carrera
 
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -83,3 +83,4 @@ select * from f_modificar_carrera('administracion', 6)
 select * from t_carrera
 --------------------------------------------------------------
 --------------------------------------------------------------
+
