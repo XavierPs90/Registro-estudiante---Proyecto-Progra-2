@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9175AD4C-3E77-40F1-8048-5169B8ABE335}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PracticaLaboratorio2</RootNamespace>
+    <AssemblyName>PracticaLaboratorio2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=5.0.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>packages\Npgsql.5.0.3\lib\netstandard2.0\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.4.6.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Channels.4.7.0\lib\netstandard2.0\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clase\Student.cs" />
+    <Compile Include="Clase\Usuario.cs" />
+    <Compile Include="Datos\Conexion.cs" />
+    <Compile Include="Logica\LogicaEstudiante.cs" />
+    <Compile Include="Logica\LogicaUsuario.cs" />
+    <Compile Include="Pruebas\Logica\LogEstudiante.cs" />
+    <Compile Include="Pruebas\Logica\LogUsuario.cs" />
+    <Compile Include="Pruebas\Vista\FormMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pruebas\Vista\FormMatricula.Designer.cs">
+      <DependentUpon>FormMatricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pruebas\Vista\FormRegistraUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pruebas\Vista\FormRegistraUsuario.Designer.cs">
+      <DependentUpon>FormRegistraUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cursos\FormCreaCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Cursos\FormCreaCursos.Designer.cs">
+      <DependentUpon>FormCreaCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cursos\FormEditaCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Cursos\FormEditaCursos.Designer.cs">
+      <DependentUpon>FormEditaCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cursos\FormEliminaCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Cursos\FormEliminaCursos.Designer.cs">
+      <DependentUpon>FormEliminaCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cursos\FormMuestraCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Cursos\FormMuestraCursos.Designer.cs">
+      <DependentUpon>FormMuestraCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Estudiantes\FormCreaEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Estudiantes\FormCreaEstudiante.Designer.cs">
+      <DependentUpon>FormCreaEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Estudiantes\FormEditaEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Estudiantes\FormEditaEstudiantes.Designer.cs">
+      <DependentUpon>FormEditaEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Estudiantes\FormEditaEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Estudiantes\FormEditaEstudiante.Designer.cs">
+      <DependentUpon>FormEditaEstudiante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Estudiantes\FormEliminaEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Estudiantes\FormEliminaEstudiantes.Designer.cs">
+      <DependentUpon>FormEliminaEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Estudiantes\FormMuestraEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Estudiantes\FormMuestraEstudiantes.Designer.cs">
+      <DependentUpon>FormMuestraEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Herramientas\FormBuscador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Herramientas\FormBuscador.Designer.cs">
+      <DependentUpon>FormBuscador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Matriculas\FormCreaMatriculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Matriculas\FormCreaMatriculas.Designer.cs">
+      <DependentUpon>FormCreaMatriculas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Matriculas\FormEditaMatriculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Matriculas\FormEditaMatriculas.Designer.cs">
+      <DependentUpon>FormEditaMatriculas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Matriculas\FormEliminaMatriculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Matriculas\FormEliminaMatriculas.Designer.cs">
+      <DependentUpon>FormEliminaMatriculas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Matriculas\FormGeneraReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Matriculas\FormGeneraReportes.Designer.cs">
+      <DependentUpon>FormGeneraReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Periodos\FormCreaPeriodos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Periodos\FormCreaPeriodos.Designer.cs">
+      <DependentUpon>FormCreaPeriodos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Periodos\FormEditaPeriodos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Periodos\FormEditaPeriodos.Designer.cs">
+      <DependentUpon>FormEditaPeriodos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Periodos\FormEliminaPeriodos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Periodos\FormEliminaPeriodos.Designer.cs">
+      <DependentUpon>FormEliminaPeriodos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Periodos\FormMuestraPeriodos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Periodos\FormMuestraPeriodos.Designer.cs">
+      <DependentUpon>FormMuestraPeriodos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Usuarios\FormCreaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Usuarios\FormCreaUsuarios.Designer.cs">
+      <DependentUpon>FormCreaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Usuarios\FormEditaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Usuarios\FormEditaUsuarios.Designer.cs">
+      <DependentUpon>FormEditaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Usuarios\FormEliminaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Usuarios\FormEliminaUsuarios.Designer.cs">
+      <DependentUpon>FormEliminaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Usuarios\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Usuarios\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Principal\FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Principal\FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\Usuarios\FormMuestraUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Usuarios\FormMuestraUsuarios.Designer.cs">
+      <DependentUpon>FormMuestraUsuarios.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Pruebas\Vista\FormMatricula.resx">
+      <DependentUpon>FormMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pruebas\Vista\FormRegistraUsuario.resx">
+      <DependentUpon>FormRegistraUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Cursos\FormCreaCursos.resx">
+      <DependentUpon>FormCreaCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Cursos\FormEditaCursos.resx">
+      <DependentUpon>FormEditaCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Cursos\FormEliminaCursos.resx">
+      <DependentUpon>FormEliminaCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Cursos\FormMuestraCursos.resx">
+      <DependentUpon>FormMuestraCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Estudiantes\FormCreaEstudiante.resx">
+      <DependentUpon>FormCreaEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Estudiantes\FormEditaEstudiantes.resx">
+      <DependentUpon>FormEditaEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Estudiantes\FormEditaEstudiante.resx">
+      <DependentUpon>FormEditaEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Estudiantes\FormEliminaEstudiantes.resx">
+      <DependentUpon>FormEliminaEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Estudiantes\FormMuestraEstudiantes.resx">
+      <DependentUpon>FormMuestraEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Herramientas\FormBuscador.resx">
+      <DependentUpon>FormBuscador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Matriculas\FormCreaMatriculas.resx">
+      <DependentUpon>FormCreaMatriculas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Matriculas\FormEditaMatriculas.resx">
+      <DependentUpon>FormEditaMatriculas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Matriculas\FormEliminaMatriculas.resx">
+      <DependentUpon>FormEliminaMatriculas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Matriculas\FormGeneraReportes.resx">
+      <DependentUpon>FormGeneraReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Periodos\FormCreaPeriodos.resx">
+      <DependentUpon>FormCreaPeriodos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Periodos\FormEditaPeriodos.resx">
+      <DependentUpon>FormEditaPeriodos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Periodos\FormEliminaPeriodos.resx">
+      <DependentUpon>FormEliminaPeriodos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Periodos\FormMuestraPeriodos.resx">
+      <DependentUpon>FormMuestraPeriodos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Usuarios\FormCreaUsuarios.resx">
+      <DependentUpon>FormCreaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Usuarios\FormEditaUsuarios.resx">
+      <DependentUpon>FormEditaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Usuarios\FormEliminaUsuarios.resx">
+      <DependentUpon>FormEliminaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Usuarios\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Principal\FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Vista\Usuarios\FormMuestraUsuarios.resx">
+      <DependentUpon>FormMuestraUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
