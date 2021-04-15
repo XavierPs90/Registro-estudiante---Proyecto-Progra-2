@@ -83,6 +83,7 @@
     <Compile Include="Clase\Student.cs" />
     <Compile Include="Clase\Usuario.cs" />
     <Compile Include="Datos\Conexion.cs" />
+    <Compile Include="Logica\LogicaCurso.cs" />
     <Compile Include="Logica\LogicaEstudiante.cs" />
     <Compile Include="Logica\LogicaUsuario.cs" />
     <Compile Include="Pruebas\Logica\LogEstudiante.cs" />

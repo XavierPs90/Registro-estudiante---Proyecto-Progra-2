@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PracticaLaboratorio2.Logica;
 
 namespace PracticaLaboratorio2.Vista.Cursos
 {
@@ -25,6 +26,19 @@ namespace PracticaLaboratorio2.Vista.Cursos
         private void btnActualizar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormMuestraCursos_Load(object sender, EventArgs e)
+        {
+            ActualizarTabla();  
+        }
+
+        public void ActualizarTabla()
+        {
+            BindingSource bindingSource = new LogicaCurso().MostrarListaCursos();
+
+            dGVMuestraListaEstudiantes.DataSource = bindingSource;
+            dGVMuestraListaEstudiantes.ClearSelection();
         }
     }
 }

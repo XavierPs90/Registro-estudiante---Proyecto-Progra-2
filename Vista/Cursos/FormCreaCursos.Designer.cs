@@ -29,46 +29,47 @@ namespace PracticaLaboratorio2.Vista.Cursos
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtCedula = new System.Windows.Forms.TextBox();
-            this.lblCedula = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnCrear = new System.Windows.Forms.Button();
+            this.txtCurso = new System.Windows.Forms.TextBox();
+            this.lblCurso = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnCancelar
+            // btnCerrar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(132, 70);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 15;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnCerrar.Location = new System.Drawing.Point(132, 70);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.TabIndex = 15;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // btnGuardar
+            // btnCrear
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(40, 70);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 14;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnCrear.Location = new System.Drawing.Point(40, 70);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.Size = new System.Drawing.Size(75, 23);
+            this.btnCrear.TabIndex = 14;
+            this.btnCrear.Text = "Crear";
+            this.btnCrear.UseVisualStyleBackColor = true;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
-            // txtCedula
+            // txtCurso
             // 
-            this.txtCedula.Location = new System.Drawing.Point(107, 30);
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(100, 20);
-            this.txtCedula.TabIndex = 9;
+            this.txtCurso.Location = new System.Drawing.Point(107, 30);
+            this.txtCurso.Name = "txtCurso";
+            this.txtCurso.Size = new System.Drawing.Size(100, 20);
+            this.txtCurso.TabIndex = 9;
             // 
-            // lblCedula
+            // lblCurso
             // 
-            this.lblCedula.AutoSize = true;
-            this.lblCedula.Location = new System.Drawing.Point(37, 33);
-            this.lblCedula.Name = "lblCedula";
-            this.lblCedula.Size = new System.Drawing.Size(37, 13);
-            this.lblCedula.TabIndex = 8;
-            this.lblCedula.Text = "Curso:";
+            this.lblCurso.AutoSize = true;
+            this.lblCurso.Location = new System.Drawing.Point(37, 33);
+            this.lblCurso.Name = "lblCurso";
+            this.lblCurso.Size = new System.Drawing.Size(37, 13);
+            this.lblCurso.TabIndex = 8;
+            this.lblCurso.Text = "Curso:";
             // 
             // FormCreaCursos
             // 
@@ -76,10 +77,10 @@ namespace PracticaLaboratorio2.Vista.Cursos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(252, 119);
             this.ControlBox = false;
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.txtCedula);
-            this.Controls.Add(this.lblCedula);
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.btnCrear);
+            this.Controls.Add(this.txtCurso);
+            this.Controls.Add(this.lblCurso);
             this.Name = "FormCreaCursos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de registro de estudiantes";
@@ -90,9 +91,9 @@ namespace PracticaLaboratorio2.Vista.Cursos
 
         #endregion
 
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtCedula;
-        private System.Windows.Forms.Label lblCedula;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnCrear;
+        private System.Windows.Forms.TextBox txtCurso;
+        private System.Windows.Forms.Label lblCurso;
     }
 }

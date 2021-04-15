@@ -42,11 +42,6 @@ namespace PracticaLaboratorio2.Vista.Estudiante
             ActualizarTabla();
         }
 
-        private void FormEliminaEstudiantes_Load(object sender, EventArgs e)
-        {
-            ActualizarTabla();
-        }
-
         public void ActualizarTabla()
         {
             BindingSource bindingSource = new LogicaEstudiante().MostrarListaEstudiantes();
@@ -54,6 +49,11 @@ namespace PracticaLaboratorio2.Vista.Estudiante
             dataGridViewEliminaEstudiantes.DataSource = bindingSource;
             dataGridViewEliminaEstudiantes.ClearSelection();
             cedula = "";
+        }
+
+        private void FormEliminaEstudiantes_Load(object sender, EventArgs e)
+        {
+            ActualizarTabla();
         }
     }
 }

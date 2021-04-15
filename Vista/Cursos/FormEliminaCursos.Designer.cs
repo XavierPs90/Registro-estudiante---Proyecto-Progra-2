@@ -29,60 +29,65 @@ namespace PracticaLaboratorio2.Vista.Cursos
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.dataGridViewEstudiantes = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEstudiantes)).BeginInit();
+            this.dataGridViewEliminaCursos = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEliminaCursos)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnCancelar
+            // btnCerrar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(329, 279);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(111, 39);
-            this.btnCancelar.TabIndex = 25;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnCerrar.Location = new System.Drawing.Point(145, 160);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(74, 22);
+            this.btnCerrar.TabIndex = 25;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(128, 279);
+            this.btnEliminar.Location = new System.Drawing.Point(46, 160);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(111, 39);
+            this.btnEliminar.Size = new System.Drawing.Size(74, 23);
             this.btnEliminar.TabIndex = 24;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // dataGridViewEstudiantes
+            // dataGridViewEliminaCursos
             // 
-            this.dataGridViewEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEstudiantes.Location = new System.Drawing.Point(54, 53);
-            this.dataGridViewEstudiantes.Name = "dataGridViewEstudiantes";
-            this.dataGridViewEstudiantes.Size = new System.Drawing.Size(467, 197);
-            this.dataGridViewEstudiantes.TabIndex = 23;
+            this.dataGridViewEliminaCursos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewEliminaCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEliminaCursos.Location = new System.Drawing.Point(24, 24);
+            this.dataGridViewEliminaCursos.Name = "dataGridViewEliminaCursos";
+            this.dataGridViewEliminaCursos.ReadOnly = true;
+            this.dataGridViewEliminaCursos.Size = new System.Drawing.Size(223, 119);
+            this.dataGridViewEliminaCursos.TabIndex = 23;
+            this.dataGridViewEliminaCursos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEliminaCursos_CellClick);
             // 
             // FormEliminaCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(579, 354);
+            this.ClientSize = new System.Drawing.Size(274, 206);
             this.ControlBox = false;
-            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.dataGridViewEstudiantes);
+            this.Controls.Add(this.dataGridViewEliminaCursos);
             this.Name = "FormEliminaCursos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de registro de estudiantes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEstudiantes)).EndInit();
+            this.Load += new System.EventHandler(this.FormEliminaCursos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEliminaCursos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.DataGridView dataGridViewEstudiantes;
+        private System.Windows.Forms.DataGridView dataGridViewEliminaCursos;
     }
 }

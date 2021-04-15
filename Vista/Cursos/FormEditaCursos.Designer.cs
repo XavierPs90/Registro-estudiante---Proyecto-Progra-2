@@ -29,59 +29,87 @@ namespace PracticaLaboratorio2.Vista.Cursos
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewEstudiantes = new System.Windows.Forms.DataGridView();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.dataGridViewEditaCursos = new System.Windows.Forms.DataGridView();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEstudiantes)).BeginInit();
+            this.txtCurso = new System.Windows.Forms.TextBox();
+            this.lblCurso = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEditaCursos)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridViewEstudiantes
+            // dataGridViewEditaCursos
             // 
-            this.dataGridViewEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEstudiantes.Location = new System.Drawing.Point(40, 43);
-            this.dataGridViewEstudiantes.Name = "dataGridViewEstudiantes";
-            this.dataGridViewEstudiantes.Size = new System.Drawing.Size(467, 197);
-            this.dataGridViewEstudiantes.TabIndex = 20;
+            this.dataGridViewEditaCursos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewEditaCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEditaCursos.Location = new System.Drawing.Point(22, 21);
+            this.dataGridViewEditaCursos.Name = "dataGridViewEditaCursos";
+            this.dataGridViewEditaCursos.ReadOnly = true;
+            this.dataGridViewEditaCursos.Size = new System.Drawing.Size(223, 121);
+            this.dataGridViewEditaCursos.TabIndex = 20;
+            this.dataGridViewEditaCursos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEstudiantes_CellClick);
             // 
-            // btnCancelar
+            // btnCerrar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(315, 269);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(111, 39);
-            this.btnCancelar.TabIndex = 22;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnCerrar.Location = new System.Drawing.Point(346, 100);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(71, 25);
+            this.btnCerrar.TabIndex = 22;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(114, 269);
+            this.btnEditar.Location = new System.Drawing.Point(268, 100);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(111, 39);
+            this.btnEditar.Size = new System.Drawing.Size(71, 25);
             this.btnEditar.TabIndex = 21;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // txtCurso
+            // 
+            this.txtCurso.Location = new System.Drawing.Point(268, 56);
+            this.txtCurso.Name = "txtCurso";
+            this.txtCurso.Size = new System.Drawing.Size(149, 20);
+            this.txtCurso.TabIndex = 24;
+            // 
+            // lblCurso
+            // 
+            this.lblCurso.AutoSize = true;
+            this.lblCurso.Location = new System.Drawing.Point(265, 40);
+            this.lblCurso.Name = "lblCurso";
+            this.lblCurso.Size = new System.Drawing.Size(37, 13);
+            this.lblCurso.TabIndex = 23;
+            this.lblCurso.Text = "Curso:";
             // 
             // FormEditaCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 335);
+            this.ClientSize = new System.Drawing.Size(442, 167);
             this.ControlBox = false;
-            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.txtCurso);
+            this.Controls.Add(this.lblCurso);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.dataGridViewEstudiantes);
+            this.Controls.Add(this.dataGridViewEditaCursos);
             this.Name = "FormEditaCursos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de registro de estudiantes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEstudiantes)).EndInit();
+            this.Load += new System.EventHandler(this.FormEditaCursos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEditaCursos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridViewEstudiantes;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.DataGridView dataGridViewEditaCursos;
+        private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.TextBox txtCurso;
+        private System.Windows.Forms.Label lblCurso;
     }
 }

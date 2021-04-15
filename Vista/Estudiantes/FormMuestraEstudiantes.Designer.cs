@@ -36,6 +36,7 @@ namespace PracticaLaboratorio2.Vista.Estudiantes
             // 
             // dGVMuestraListaEstudiantes
             // 
+            this.dGVMuestraListaEstudiantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGVMuestraListaEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVMuestraListaEstudiantes.Location = new System.Drawing.Point(30, 32);
             this.dGVMuestraListaEstudiantes.Name = "dGVMuestraListaEstudiantes";

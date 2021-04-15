@@ -57,6 +57,7 @@ namespace PracticaLaboratorio2.Vista.Estudiante
             // 
             // dataGridViewEliminaEstudiantes
             // 
+            this.dataGridViewEliminaEstudiantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewEliminaEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEliminaEstudiantes.Location = new System.Drawing.Point(32, 30);
             this.dataGridViewEliminaEstudiantes.MultiSelect = false;
