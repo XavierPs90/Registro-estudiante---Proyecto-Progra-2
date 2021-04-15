@@ -41,6 +41,9 @@ namespace PracticaLaboratorio2.Vista.Estudiante
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            txtCedula.Text = "";
+            txtNombre.Text = "";
+            txtEdad.Text = "";
             Close();
         }
     }

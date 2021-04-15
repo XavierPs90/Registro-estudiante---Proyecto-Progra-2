@@ -10,6 +10,7 @@ namespace PracticaLaboratorio2.Vista
     {
         private Boolean loginCorrecto;
         private String perfil, usuario;
+        FormRegistraUsuario formRegistraUsuario = new FormRegistraUsuario();
 
         public Boolean LoginCorrecto
         {
@@ -57,8 +58,8 @@ namespace PracticaLaboratorio2.Vista
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            FormRegistraUsuario formRegistraUsuario = new FormRegistraUsuario();
-
+            txtUsuario.Text = "";
+            txtClave.Text = "";
             formRegistraUsuario.ShowDialog();
         }
 

@@ -16,6 +16,9 @@ namespace PracticaLaboratorio2.Vista.Usuarios
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            txtUsuario.Text = usuario;
+            txtClave.Text = clave;
+            txtPerfil.Text = perfil;
             Close();
         }
 

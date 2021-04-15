@@ -7,7 +7,7 @@ namespace PracticaLaboratorio2.Datos
 {
     class Conexion
     {
-        private String urlConexion = "Server = 127.0.0.1; User Id = postgres; Password=123; Database=db_proyecto;";
+        private String urlConexion = "Server = 127.0.0.1; User Id = postgres; Password=123; Database=proyecto;";
         private NpgsqlConnection conexion;
 
         public Conexion()

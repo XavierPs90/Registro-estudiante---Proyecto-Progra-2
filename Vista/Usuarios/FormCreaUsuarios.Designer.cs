@@ -102,6 +102,7 @@ namespace PracticaLaboratorio2.Vista.Usuarios
             // 
             // comboBoxPerfil
             // 
+            this.comboBoxPerfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPerfil.FormattingEnabled = true;
             this.comboBoxPerfil.Items.AddRange(new object[] {
             "Administrador\t",

@@ -12,43 +12,45 @@ namespace PracticaLaboratorio2.Logica
     {
         private Conexion conexion = new Conexion();
         public List<String> estudiante = new List<string>();
-        private String usuario;
-
-        public Boolean CrearEstudiante(Student estudiante, String usuario)
+        
+        public Boolean CrearEstudiante(Student estudiante)
         {
-            String instruccionKey, instruccionPrincipal;//, instruccionSecundaria;
+            String instruccionKey, instruccionPrincipal;
             NpgsqlDataReader datosObtenidos;
 
-            instruccionKey = "select cedula from estudiante where cedula = '" + estudiante.Cedula + "'";
-            instruccionPrincipal = "insert into estudiante (cedula, nombre, edad, usuario)" + " values ('" + estudiante.Cedula + "', '" + estudiante.Nombre + "', '" + estudiante.Edad + "', '" + usuario + "')";
-            //instruccionSecundaria = "insert into usuario (nombre)" + " values ('" + usuario + "')";
+            instruccionKey = "select usuario from estudiante where usuario = '" + estudiante.Usuario + "'";
+            instruccionPrincipal = "insert into estudiante (cedula, nombre, edad, usuario)" + " values ('" + estudiante.Cedula + "', '" + estudiante.Nombre + "', '" + estudiante.Edad + "', '" + estudiante.Usuario + "')";
             Boolean resultado = false;
-            
+
             if (estudiante.Cedula != "" && estudiante.Nombre != "" && estudiante.Edad != "")
             {
-                conexion.Conectar();
-                datosObtenidos = conexion.Leer(instruccionKey);
-                //usuario = CargarUsuario();
-
-                if (!datosObtenidos.Read())
+                if (estudiante.Usuario != null)
                 {
-                    conexion.Desconectar();
                     conexion.Conectar();
-
-                    if (conexion.EjecutarInstruccion(instruccionPrincipal))
+                    datosObtenidos = conexion.Leer(instruccionKey);
+                    
+                    if (!datosObtenidos.Read())
                     {
-                        resultado = true;
-                        MessageBox.Show("El estudiante se ha creado correctamente", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        conexion.Desconectar();
+                        conexion.Conectar();
+
+                        if (conexion.EjecutarInstruccion(instruccionPrincipal))
+                        {
+                            resultado = true;
+                            MessageBox.Show("El estudiante se ha creado correctamente", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
+                    else
+                        MessageBox.Show("Para crear otro estudiante primero debe crear otro usuario y luego el estudiante", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    conexion.Desconectar();
                 }
                 else
-                    MessageBox.Show("El estudiante ya existe", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                conexion.Desconectar();
+                    MessageBox.Show("Primero debe crear el usuario", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
                 MessageBox.Show("Se debe rellenar todos los espacios en blanco", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            
             return resultado;
         }
 
@@ -120,7 +122,7 @@ namespace PracticaLaboratorio2.Logica
             return resultado;
         }
 
-        public Boolean CargarUsuario() 
+        public Boolean CargarUsuario(String usuario) 
         {
             NpgsqlDataReader datosObtenidos;
             String instruccion = "select usuario from estudiante where usuario = '" + usuario + "'";
@@ -141,7 +143,7 @@ namespace PracticaLaboratorio2.Logica
 
             conexion.Desconectar();
 
-            return false;
+            return resultado;
         }
     }
 }

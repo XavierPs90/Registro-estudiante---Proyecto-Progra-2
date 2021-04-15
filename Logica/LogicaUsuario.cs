@@ -51,7 +51,7 @@ namespace PracticaLaboratorio2.Logica
             instruccionPrincipal = "insert into usuario (usuario, clave, perfil) values ('" + usuario.User + "', '" + usuario.Clave + "', '" + usuario.Perfil + "')";
             Boolean resultado = false;
             
-            if (usuario.User != "" && usuario.Clave != "" && usuario.Perfil != "") 
+            if (usuario.User != "" && usuario.Clave != "" && usuario.Perfil != null) 
             {
                 conexion.Conectar();
                 datosObtenidos = conexion.Leer(instruccionKey);
@@ -112,7 +112,7 @@ namespace PracticaLaboratorio2.Logica
         {
             BindingSource regresa = new BindingSource();
             DataTable dataTable;
-            String instruccion = "select usuario, clave, perfil from usuario";
+            String instruccion = "select * from usuario where perfil = 'estudiante'";
 
             conexion.Conectar();
             dataTable = conexion.ObtenerDataTable(instruccion);

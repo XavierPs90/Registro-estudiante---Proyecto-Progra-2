@@ -15,7 +15,27 @@ namespace PracticaLaboratorio2
     public partial class FormPrincipal : Form
     {
         private FormLogin formLogin = new FormLogin();
-        String perfil;
+        private FormCreaUsuarios formCreaUsuarios = new FormCreaUsuarios();
+        private FormEditaUsuarios formEditaUsuarios = new FormEditaUsuarios();
+        private FormEliminaUsuarios formEliminaUsuarios = new FormEliminaUsuarios();
+        private FormMuestraUsuarios formMuestraUsuarios = new FormMuestraUsuarios();
+        private FormCreaEstudiante formCreaEstudiante = new FormCreaEstudiante();
+        private FormEditaEstudiantes formEditaEstudiantes = new FormEditaEstudiantes();
+        private FormEditaEstudiante formEditaEstudiante = new FormEditaEstudiante();
+        private LogicaUsuario logicaUsuario = new LogicaUsuario();
+        private FormEliminaEstudiantes formEliminaEstudiantes = new FormEliminaEstudiantes();
+        private FormMuestraEstudiantes formMuestraEstudiantes = new FormMuestraEstudiantes();
+        private FormCreaCursos formCreaCursos = new FormCreaCursos();
+        private FormEditaCursos formEditaCursos = new FormEditaCursos();
+        private FormEliminaCursos formEliminaCursos = new FormEliminaCursos();
+        private FormMuestraCursos formMuestraCursos = new FormMuestraCursos();
+        private FormCreaPeriodos formCreaPeriodos = new FormCreaPeriodos();
+        private FormEditaPeriodos formEditaPeriodos = new FormEditaPeriodos();
+        private FormEliminaPeriodos formEliminaPeriodos = new FormEliminaPeriodos();
+        private FormMuestraPeriodos formMuestraPeriodos = new FormMuestraPeriodos();
+        private FormEliminaMatriculas formEliminaMatricula = new FormEliminaMatriculas();
+        private FormGeneraReportes formGeneraReportes = new FormGeneraReportes();
+        private FormBuscador formBuscador = new FormBuscador();
 
         public FormPrincipal()
         {
@@ -24,7 +44,7 @@ namespace PracticaLaboratorio2
 
 
         /*-------------------------------------------------------------
-         *----------------------METODOS-PRINCIPAL---------------------- 
+         *----------------------MENU-PRINCIPAL------------------------- 
          ------------------------------------------------------------*/
 
         private void FormPrincipal_Load(object sender, EventArgs e)
@@ -36,13 +56,12 @@ namespace PracticaLaboratorio2
                 Close();
             }
 
-            perfil = formLogin.Perfil;
             VerificarPerfil();
         }
 
         private void VerificarPerfil()
         {
-            if (perfil != "administrador")
+            if (formLogin.Perfil != "administrador")
             {
                 eliminarToolStripMenuEstudiantes.Enabled = false;
                 eliminarToolStripMenuEstudiantes.Visible = false;
@@ -52,7 +71,7 @@ namespace PracticaLaboratorio2
         }
 
         /*-------------------------------------------------------------
-         *---------------------METODOS-ARCHIVO------------------------- 
+         *---------------------MENU-ARCHIVO---------------------------- 
          ------------------------------------------------------------*/
 
         private void cerrarSesiónToolStripMenuArchivo_Click(object sender, EventArgs e)
@@ -66,61 +85,49 @@ namespace PracticaLaboratorio2
         }
 
         /*-------------------------------------------------------------
-         *---------------------METODOS-USUARIOS------------------------ 
+         *---------------------MENU-USUARIOS--------------------------- 
          ------------------------------------------------------------*/
 
         private void crearToolStripMenuUsuarios_Click(object sender, EventArgs e)
         {
-            FormCreaUsuarios formCreaUsuarios = new FormCreaUsuarios();
-
             formCreaUsuarios.ShowDialog();
         }
 
         private void editarToolStripMenuUsuarios_Click(object sender, EventArgs e)
         {
-            FormEditaUsuarios formEditaUsuarios = new FormEditaUsuarios();
-
             formEditaUsuarios.ShowDialog();
         }
 
         private void eliminarToolStripMenuUsuarios_Click(object sender, EventArgs e)
         {
-            FormEliminaUsuarios formEliminaUsuarios = new FormEliminaUsuarios();
-
             formEliminaUsuarios.ShowDialog();
         }
 
         private void mostrarListaToolStripMenuUsuarios_Click(object sender, EventArgs e)
         {
-            FormMuestraUsuarios formMuestraUsuarios = new FormMuestraUsuarios();
-
             formMuestraUsuarios.ShowDialog();
         }
 
         /*-------------------------------------------------------------
-         *---------------------METODOS-ESTUDIANTES--------------------- 
+         *---------------------MENU-ESTUDIANTES------------------------ 
          ------------------------------------------------------------*/
 
         private void crearToolStripMenuEstudiante_Click(object sender, EventArgs e)
         {
-            FormCreaEstudiante formCreaEstudiante = new FormCreaEstudiante();
+            if (formLogin.Perfil == "administrador")
+                formCreaEstudiante.Usuario = formCreaUsuarios.Usuario;
             
             formCreaEstudiante.ShowDialog();
         }
 
         private void editarToolStripMenuEstudiantes_Click(object sender, EventArgs e)
         {
-            if (perfil == "administrador")
+            if (formLogin.Perfil == "administrador")
             {
-                FormEditaEstudiantes formEditaEstudiantes = new FormEditaEstudiantes();
-                
                 formEditaEstudiantes.ShowDialog();
             }
             else
             {
-                FormEditaEstudiante formEditaEstudiante = new FormEditaEstudiante();
-                LogicaUsuario logicaUsuario = new LogicaUsuario();
-
                 if (logicaUsuario.CargarNombre(formLogin.Usuario) != "")
                 {
                     formEditaEstudiante.Usuario = formLogin.Usuario;
@@ -131,108 +138,82 @@ namespace PracticaLaboratorio2
 
         private void eliminarToolStripMenuEstudiantes_Click(object sender, EventArgs e)
         {
-            FormEliminaEstudiantes formEliminaEstudiantes = new FormEliminaEstudiantes();
-
             formEliminaEstudiantes.ShowDialog();
         }
 
         private void mostrarListaToolStripMenuEstudiantes_Click(object sender, EventArgs e)
         {
-            FormMuestraEstudiantes formMuestraEstudiantes = new FormMuestraEstudiantes();
-
             formMuestraEstudiantes.ShowDialog();
         }
 
         /*-------------------------------------------------------------
-         *---------------------METODOS-CURSOS---------------------- 
+         *---------------------MENU-CURSOS----------------------------- 
          ------------------------------------------------------------*/
 
         private void crearToolStripMenuCursos_Click(object sender, EventArgs e)
         {
-            FormCreaCursos formCreaCursos = new FormCreaCursos();
-
             formCreaCursos.ShowDialog();
         }
 
         private void editarToolStripMenuCursos_Click(object sender, EventArgs e)
         {
-            FormEditaCursos formEditaCursos = new FormEditaCursos();
-
             formEditaCursos.ShowDialog();
         }
 
         private void eliminarToolStripMenuCursos_Click(object sender, EventArgs e)
         {
-            FormEliminaCursos formEliminaCursos = new FormEliminaCursos();
-
             formEliminaCursos.ShowDialog();
         }
 
         private void mostrarListaToolStripMenuCursos_Click(object sender, EventArgs e)
         {
-            FormMuestraCursos formMuestraCursos = new FormMuestraCursos();
-
             formMuestraCursos.ShowDialog();
         }
 
         /*-------------------------------------------------------------
-         *---------------------METODOS-PERIODOS------------------------ 
+         *---------------------MENU-PERIODOS--------------------------- 
          ------------------------------------------------------------*/
 
         private void crearToolStripMenuPeriodos_Click(object sender, EventArgs e)
         {
-            FormCreaPeriodos formCreaPeriodos = new FormCreaPeriodos();
-
             formCreaPeriodos.ShowDialog();
         }
 
         private void editarToolStripMenuPeriodos_Click(object sender, EventArgs e)
         {
-            FormEditaPeriodos formEditaPeriodos = new FormEditaPeriodos();
-
             formEditaPeriodos.ShowDialog();
         }
 
         private void eliminarToolStripMenuPeriodos_Click(object sender, EventArgs e)
         {
-            FormEliminaPeriodos formEliminaPeriodos = new FormEliminaPeriodos();
-
             formEliminaPeriodos.ShowDialog();
         }
 
         private void mostrarListaToolStripMenuPeriodos_Click(object sender, EventArgs e)
         {
-            FormMuestraPeriodos formMuestraPeriodos = new FormMuestraPeriodos();
-
             formMuestraPeriodos.ShowDialog();
         }
 
         /*-------------------------------------------------------------
-         *---------------------METODOS-Matriculas---------------------- 
+         *---------------------MENU-MATRICULAS------------------------- 
          ------------------------------------------------------------*/
 
         private void eliminarToolStripMenuMatriculas_Click(object sender, EventArgs e)
         {
-            FormEliminaMatriculas formEliminaMatricula = new FormEliminaMatriculas();
-
             formEliminaMatricula.ShowDialog();
         }
 
         private void reporteToolStripMenuMatriculas_Click(object sender, EventArgs e)
         {
-            FormGeneraReportes formGeneraReportes = new FormGeneraReportes();
-
             formGeneraReportes.ShowDialog();
         }
 
         /*-------------------------------------------------------------
-         *---------------------METODOS-BUSCADOR------------------------ 
+         *---------------------MENU-BUSCADOR--------------------------- 
          ------------------------------------------------------------*/
 
         private void buscadorToolStripMenuHerramientas_Click(object sender, EventArgs e)
         {
-            FormBuscador formBuscador = new FormBuscador();
-
             formBuscador.ShowDialog();
         }
     }

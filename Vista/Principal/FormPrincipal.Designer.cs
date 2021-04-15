@@ -59,22 +59,7 @@ namespace PracticaLaboratorio2
             this.reporteToolStripMenuMatriculas = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.buscadorToolStripMenuHerramientas = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtEdad = new System.Windows.Forms.TextBox();
-            this.lblEdad = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.txtCedula = new System.Windows.Forms.TextBox();
-            this.lblCedula = new System.Windows.Forms.Label();
-            this.lblMatricula = new System.Windows.Forms.Label();
             this.menuStripPrincipal.SuspendLayout();
-            this.panelPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStripPrincipal
@@ -89,7 +74,7 @@ namespace PracticaLaboratorio2
             this.herramientasToolStripMenu});
             this.menuStripPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuStripPrincipal.Name = "menuStripPrincipal";
-            this.menuStripPrincipal.Size = new System.Drawing.Size(669, 24);
+            this.menuStripPrincipal.Size = new System.Drawing.Size(616, 24);
             this.menuStripPrincipal.TabIndex = 0;
             this.menuStripPrincipal.Text = "Menú Principal";
             // 
@@ -169,28 +154,28 @@ namespace PracticaLaboratorio2
             // crearToolStripMenuEstudiantes
             // 
             this.crearToolStripMenuEstudiantes.Name = "crearToolStripMenuEstudiantes";
-            this.crearToolStripMenuEstudiantes.Size = new System.Drawing.Size(139, 22);
+            this.crearToolStripMenuEstudiantes.Size = new System.Drawing.Size(180, 22);
             this.crearToolStripMenuEstudiantes.Text = "Crear";
             this.crearToolStripMenuEstudiantes.Click += new System.EventHandler(this.crearToolStripMenuEstudiante_Click);
             // 
             // editarToolStripMenuIEstudiantes
             // 
             this.editarToolStripMenuIEstudiantes.Name = "editarToolStripMenuIEstudiantes";
-            this.editarToolStripMenuIEstudiantes.Size = new System.Drawing.Size(139, 22);
+            this.editarToolStripMenuIEstudiantes.Size = new System.Drawing.Size(180, 22);
             this.editarToolStripMenuIEstudiantes.Text = "Editar";
             this.editarToolStripMenuIEstudiantes.Click += new System.EventHandler(this.editarToolStripMenuEstudiantes_Click);
             // 
             // eliminarToolStripMenuEstudiantes
             // 
             this.eliminarToolStripMenuEstudiantes.Name = "eliminarToolStripMenuEstudiantes";
-            this.eliminarToolStripMenuEstudiantes.Size = new System.Drawing.Size(139, 22);
+            this.eliminarToolStripMenuEstudiantes.Size = new System.Drawing.Size(180, 22);
             this.eliminarToolStripMenuEstudiantes.Text = "Eliminar";
             this.eliminarToolStripMenuEstudiantes.Click += new System.EventHandler(this.eliminarToolStripMenuEstudiantes_Click);
             // 
             // mostrarListaToolStripMenuEstudiantes
             // 
             this.mostrarListaToolStripMenuEstudiantes.Name = "mostrarListaToolStripMenuEstudiantes";
-            this.mostrarListaToolStripMenuEstudiantes.Size = new System.Drawing.Size(139, 22);
+            this.mostrarListaToolStripMenuEstudiantes.Size = new System.Drawing.Size(180, 22);
             this.mostrarListaToolStripMenuEstudiantes.Text = "Mostrar lista";
             this.mostrarListaToolStripMenuEstudiantes.Click += new System.EventHandler(this.mostrarListaToolStripMenuEstudiantes_Click);
             // 
@@ -317,141 +302,13 @@ namespace PracticaLaboratorio2
             this.buscadorToolStripMenuHerramientas.Text = "Buscador";
             this.buscadorToolStripMenuHerramientas.Click += new System.EventHandler(this.buscadorToolStripMenuHerramientas_Click);
             // 
-            // panelPrincipal
-            // 
-            this.panelPrincipal.Controls.Add(this.dateTimePicker1);
-            this.panelPrincipal.Controls.Add(this.comboBox2);
-            this.panelPrincipal.Controls.Add(this.comboBox1);
-            this.panelPrincipal.Controls.Add(this.label2);
-            this.panelPrincipal.Controls.Add(this.label3);
-            this.panelPrincipal.Controls.Add(this.label4);
-            this.panelPrincipal.Controls.Add(this.txtEdad);
-            this.panelPrincipal.Controls.Add(this.lblEdad);
-            this.panelPrincipal.Controls.Add(this.txtNombre);
-            this.panelPrincipal.Controls.Add(this.lblNombre);
-            this.panelPrincipal.Controls.Add(this.txtCedula);
-            this.panelPrincipal.Controls.Add(this.lblCedula);
-            this.panelPrincipal.Controls.Add(this.lblMatricula);
-            this.panelPrincipal.Location = new System.Drawing.Point(12, 36);
-            this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(645, 417);
-            this.panelPrincipal.TabIndex = 21;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(407, 232);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 33;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(407, 188);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 21);
-            this.comboBox2.TabIndex = 32;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(407, 143);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 31;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(331, 235);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "Fecha:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(331, 191);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Periodo:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(331, 146);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Curso:";
-            // 
-            // txtEdad
-            // 
-            this.txtEdad.Location = new System.Drawing.Point(103, 232);
-            this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(199, 20);
-            this.txtEdad.TabIndex = 27;
-            // 
-            // lblEdad
-            // 
-            this.lblEdad.AutoSize = true;
-            this.lblEdad.Location = new System.Drawing.Point(33, 235);
-            this.lblEdad.Name = "lblEdad";
-            this.lblEdad.Size = new System.Drawing.Size(35, 13);
-            this.lblEdad.TabIndex = 26;
-            this.lblEdad.Text = "Edad:";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(103, 188);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(199, 20);
-            this.txtNombre.TabIndex = 25;
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(33, 191);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(47, 13);
-            this.lblNombre.TabIndex = 24;
-            this.lblNombre.Text = "Nombre:";
-            // 
-            // txtCedula
-            // 
-            this.txtCedula.Location = new System.Drawing.Point(102, 143);
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(200, 20);
-            this.txtCedula.TabIndex = 23;
-            // 
-            // lblCedula
-            // 
-            this.lblCedula.AutoSize = true;
-            this.lblCedula.Location = new System.Drawing.Point(33, 146);
-            this.lblCedula.Name = "lblCedula";
-            this.lblCedula.Size = new System.Drawing.Size(43, 13);
-            this.lblCedula.TabIndex = 22;
-            this.lblCedula.Text = "Cedula:";
-            // 
-            // lblMatricula
-            // 
-            this.lblMatricula.AutoSize = true;
-            this.lblMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMatricula.Location = new System.Drawing.Point(253, 46);
-            this.lblMatricula.Name = "lblMatricula";
-            this.lblMatricula.Size = new System.Drawing.Size(143, 33);
-            this.lblMatricula.TabIndex = 21;
-            this.lblMatricula.Text = "Matrícula";
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 465);
+            this.BackgroundImage = global::PracticaLaboratorio2.Properties.Resources.fondo_principal;
+            this.ClientSize = new System.Drawing.Size(616, 556);
             this.ControlBox = false;
-            this.Controls.Add(this.panelPrincipal);
             this.Controls.Add(this.menuStripPrincipal);
             this.MainMenuStrip = this.menuStripPrincipal;
             this.Name = "FormPrincipal";
@@ -460,8 +317,6 @@ namespace PracticaLaboratorio2
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.menuStripPrincipal.ResumeLayout(false);
             this.menuStripPrincipal.PerformLayout();
-            this.panelPrincipal.ResumeLayout(false);
-            this.panelPrincipal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -488,20 +343,6 @@ namespace PracticaLaboratorio2
         private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuCursos;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuCursos;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuCursos;
-        private System.Windows.Forms.Panel panelPrincipal;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtEdad;
-        private System.Windows.Forms.Label lblEdad;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox txtCedula;
-        private System.Windows.Forms.Label lblCedula;
-        private System.Windows.Forms.Label lblMatricula;
         private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuPeriodos;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuPeriodos;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuPeriodos;

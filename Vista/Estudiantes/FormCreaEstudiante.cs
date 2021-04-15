@@ -22,6 +22,9 @@ namespace PracticaLaboratorio2.Vista.Estudiantes
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            txtCedula.Text = "";
+            txtNombre.Text = "";
+            txtEdad.Text = "";
             Close();
         }
 
@@ -37,10 +40,11 @@ namespace PracticaLaboratorio2.Vista.Estudiantes
             estudiante.Cedula = cedula;
             estudiante.Nombre = nombre;
             estudiante.Edad = edad;
+            estudiante.Usuario = usuario;
 
             LogicaEstudiante logicaEstudiante = new LogicaEstudiante();
 
-            if (logicaEstudiante.CrearEstudiante(estudiante, usuario)) 
+            if (logicaEstudiante.CrearEstudiante(estudiante)) 
             {
                 txtCedula.Text = "";
                 txtNombre.Text = "";

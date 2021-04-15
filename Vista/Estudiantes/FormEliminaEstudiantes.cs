@@ -34,6 +34,7 @@ namespace PracticaLaboratorio2.Vista.Estudiante
             if (cedula != "")
             {
                 new LogicaEstudiante().EliminarEstudiante(cedula);
+                cedula = "";
             }
             else
                 MessageBox.Show("Primero debe selecionar un dato de la tabla", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -52,6 +53,7 @@ namespace PracticaLaboratorio2.Vista.Estudiante
 
             dataGridViewEliminaEstudiantes.DataSource = bindingSource;
             dataGridViewEliminaEstudiantes.ClearSelection();
+            cedula = "";
         }
     }
 }
