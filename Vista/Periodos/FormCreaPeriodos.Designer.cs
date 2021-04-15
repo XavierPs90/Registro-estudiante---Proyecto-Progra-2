@@ -29,30 +29,31 @@ namespace PracticaLaboratorio2.Vista.Periodos
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnCrear = new System.Windows.Forms.Button();
             this.txtPeriodo = new System.Windows.Forms.TextBox();
             this.lblPeriodo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnCancelar
+            // btnCerrar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(130, 71);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 23;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnCerrar.Location = new System.Drawing.Point(130, 71);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.TabIndex = 23;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // btnGuardar
+            // btnCrear
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(38, 71);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 22;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnCrear.Location = new System.Drawing.Point(38, 71);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.Size = new System.Drawing.Size(75, 23);
+            this.btnCrear.TabIndex = 22;
+            this.btnCrear.Text = "Crear";
+            this.btnCrear.UseVisualStyleBackColor = true;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
             // txtPeriodo
             // 
@@ -76,8 +77,8 @@ namespace PracticaLaboratorio2.Vista.Periodos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(247, 124);
             this.ControlBox = false;
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.txtPeriodo);
             this.Controls.Add(this.lblPeriodo);
             this.Name = "FormCreaPeriodos";
@@ -90,8 +91,8 @@ namespace PracticaLaboratorio2.Vista.Periodos
 
         #endregion
 
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.TextBox txtPeriodo;
         private System.Windows.Forms.Label lblPeriodo;
     }

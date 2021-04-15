@@ -37,6 +37,7 @@ namespace PracticaLaboratorio2.Vista.Usuarios
             // 
             // dataGridViewEliminaUsuarios
             // 
+            this.dataGridViewEliminaUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewEliminaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEliminaUsuarios.Location = new System.Drawing.Point(31, 27);
             this.dataGridViewEliminaUsuarios.MultiSelect = false;

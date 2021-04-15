@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using PracticaLaboratorio2.Logica;
 
@@ -23,11 +16,6 @@ namespace PracticaLaboratorio2.Vista.Cursos
             Close();
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FormMuestraCursos_Load(object sender, EventArgs e)
         {
             ActualizarTabla();  
@@ -37,8 +25,8 @@ namespace PracticaLaboratorio2.Vista.Cursos
         {
             BindingSource bindingSource = new LogicaCurso().MostrarListaCursos();
 
-            dGVMuestraListaEstudiantes.DataSource = bindingSource;
-            dGVMuestraListaEstudiantes.ClearSelection();
+            dGVMuestraListaCursos.DataSource = bindingSource;
+            dGVMuestraListaCursos.ClearSelection();
         }
     }
 }

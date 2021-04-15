@@ -50,9 +50,9 @@ namespace PracticaLaboratorio2.Vista.Cursos
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(346, 100);
+            this.btnCerrar.Location = new System.Drawing.Point(351, 100);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(71, 25);
+            this.btnCerrar.Size = new System.Drawing.Size(66, 22);
             this.btnCerrar.TabIndex = 22;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -62,7 +62,7 @@ namespace PracticaLaboratorio2.Vista.Cursos
             // 
             this.btnEditar.Location = new System.Drawing.Point(268, 100);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(71, 25);
+            this.btnEditar.Size = new System.Drawing.Size(66, 22);
             this.btnEditar.TabIndex = 21;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;

@@ -84,6 +84,7 @@ namespace PracticaLaboratorio2.Vista.Cursos
             this.Name = "FormCreaCursos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de registro de estudiantes";
+            this.Load += new System.EventHandler(this.FormCreaCursos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

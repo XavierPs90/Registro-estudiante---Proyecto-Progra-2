@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PracticaLaboratorio2.Logica;
+using System;
 using System.Windows.Forms;
 
 namespace PracticaLaboratorio2.Vista.Periodos
 {
     public partial class FormCreaPeriodos : Form
     {
+        LogicaPeriodo logicaPeriodo = new LogicaPeriodo();
+
         public FormCreaPeriodos()
         {
             InitializeComponent();
@@ -19,7 +15,16 @@ namespace PracticaLaboratorio2.Vista.Periodos
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            txtPeriodo.Text = "";
+            Close();
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            if (logicaPeriodo.CrearPeriodo(txtPeriodo.Text.ToLower()))
+            {
+                txtPeriodo.Text = "";
+            }
         }
     }
 }

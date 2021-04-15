@@ -30,8 +30,8 @@ namespace PracticaLaboratorio2.Vista.Cursos
         private void InitializeComponent()
         {
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.dGVMuestraListaEstudiantes = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVMuestraListaEstudiantes)).BeginInit();
+            this.dGVMuestraListaCursos = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVMuestraListaCursos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCerrar
@@ -44,15 +44,15 @@ namespace PracticaLaboratorio2.Vista.Cursos
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // dGVMuestraListaEstudiantes
+            // dGVMuestraListaCursos
             // 
-            this.dGVMuestraListaEstudiantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dGVMuestraListaEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVMuestraListaEstudiantes.Location = new System.Drawing.Point(26, 23);
-            this.dGVMuestraListaEstudiantes.Name = "dGVMuestraListaEstudiantes";
-            this.dGVMuestraListaEstudiantes.ReadOnly = true;
-            this.dGVMuestraListaEstudiantes.Size = new System.Drawing.Size(222, 130);
-            this.dGVMuestraListaEstudiantes.TabIndex = 3;
+            this.dGVMuestraListaCursos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGVMuestraListaCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVMuestraListaCursos.Location = new System.Drawing.Point(26, 23);
+            this.dGVMuestraListaCursos.Name = "dGVMuestraListaCursos";
+            this.dGVMuestraListaCursos.ReadOnly = true;
+            this.dGVMuestraListaCursos.Size = new System.Drawing.Size(222, 130);
+            this.dGVMuestraListaCursos.TabIndex = 3;
             // 
             // FormMuestraCursos
             // 
@@ -61,18 +61,18 @@ namespace PracticaLaboratorio2.Vista.Cursos
             this.ClientSize = new System.Drawing.Size(276, 209);
             this.ControlBox = false;
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.dGVMuestraListaEstudiantes);
+            this.Controls.Add(this.dGVMuestraListaCursos);
             this.Name = "FormMuestraCursos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de registro de estudiantes";
             this.Load += new System.EventHandler(this.FormMuestraCursos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dGVMuestraListaEstudiantes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVMuestraListaCursos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.DataGridView dGVMuestraListaEstudiantes;
+        private System.Windows.Forms.DataGridView dGVMuestraListaCursos;
     }
 }
