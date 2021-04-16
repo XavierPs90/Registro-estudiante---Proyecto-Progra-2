@@ -56,11 +56,12 @@ namespace PracticaLaboratorio2.Datos
         {
             Boolean resultado = false;
             int numColumnasAfectadas;
+            
             try
             {
                 NpgsqlCommand comando = new NpgsqlCommand(instruccion, conexion);
                 numColumnasAfectadas = comando.ExecuteNonQuery();
-                
+
                 if (numColumnasAfectadas != -1)
                     resultado = true;
             }

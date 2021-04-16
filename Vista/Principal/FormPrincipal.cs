@@ -63,10 +63,31 @@ namespace PracticaLaboratorio2
         {
             if (formLogin.Perfil != "administrador")
             {
+                // USUARIOS
+                crearToolStripMenuUsuarios.Enabled = false;
+                crearToolStripMenuUsuarios.Visible = false;
+                eliminarToolStripMenuUsuarios.Enabled = false;
+                eliminarToolStripMenuUsuarios.Visible = false;
+                // ESTUDIANTES
                 eliminarToolStripMenuEstudiantes.Enabled = false;
                 eliminarToolStripMenuEstudiantes.Visible = false;
-                crearToolStripMenuEstudiantes.Enabled = false;
-                crearToolStripMenuEstudiantes.Visible = false;
+                // CURSOS
+                crearToolStripMenuCursos.Enabled = false;
+                crearToolStripMenuCursos.Visible = false;
+                editarToolStripMenuCursos.Enabled = false;
+                editarToolStripMenuCursos.Visible = false;
+                eliminarToolStripMenuCursos.Enabled = false;
+                eliminarToolStripMenuCursos.Visible = false;
+                // PERIODOS
+                crearToolStripMenuPeriodos.Enabled = false;
+                crearToolStripMenuPeriodos.Visible = false;
+                editarToolStripMenuPeriodos.Enabled = false;
+                editarToolStripMenuPeriodos.Visible = false;
+                eliminarToolStripMenuPeriodos.Enabled = false;
+                eliminarToolStripMenuPeriodos.Visible = false;
+                // MATRICULAS
+                editarToolStripMenuMatriculas.Enabled = false;
+                editarToolStripMenuMatriculas.Visible = false;
             }
         }
 
@@ -128,11 +149,8 @@ namespace PracticaLaboratorio2
             }
             else
             {
-                if (logicaUsuario.CargarNombre(formLogin.Usuario) != "")
-                {
-                    formEditaEstudiante.Usuario = formLogin.Usuario;
-                    formEditaEstudiante.ShowDialog();
-                }
+               formEditaEstudiante.Usuario = formLogin.Usuario;
+               formEditaEstudiante.ShowDialog();
             }
         }
 

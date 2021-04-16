@@ -16,7 +16,7 @@ namespace PracticaLaboratorio2.Pruebas.Logica
             String instruccionSecundaria, instruccionPrincipal;
             NpgsqlDataReader datosObtenidos;
 
-            instruccionSecundaria = "select * from f_obtener_usuario_especifico ('" + usuario.User + "', '" + usuario.Clave + "')";
+            instruccionSecundaria = "select * from usuario where usuario = '" + usuario.User + "' and clave = '" + usuario.Clave + "'";
             instruccionPrincipal = "select f_insertar_tabla_usuario ('" + usuario.User + "', '" + usuario.Clave + "', '" + usuario.Perfil + "')";
 
             if (usuario.User != "" && usuario.Clave != "")
@@ -26,7 +26,7 @@ namespace PracticaLaboratorio2.Pruebas.Logica
                     conexion.Conectar();
                     datosObtenidos = conexion.Leer(instruccionSecundaria);
 
-                    if (datosObtenidos.IsOnRow)
+                    if (datosObtenidos.Read())
                         MessageBox.Show("El usuario ya existe", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     else
                     {

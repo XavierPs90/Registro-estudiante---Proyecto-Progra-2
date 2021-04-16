@@ -122,26 +122,42 @@ namespace PracticaLaboratorio2.Logica
             return regresa;
         }
 
-        public String CargarNombre(String usuario) 
+        public Boolean RegistrarUsuario(Usuario usuario, String clave)
         {
+            String instruccionSecundaria, instruccionPrincipal;
             NpgsqlDataReader datosObtenidos;
-            String instruccion, resultado = "";
+            Boolean resultado = false;
+            instruccionSecundaria = "select * from usuario where usuario = '" + usuario.User + "' and clave = '" + usuario.Clave + "'";
+            instruccionPrincipal = "insert into usuario (usuario, clave, perfil) values ('" + usuario.User + "', '" + usuario.Clave + "', '" + usuario.Perfil + "')";
 
-            instruccion = "select nombre from usuario where usuario = '" + usuario + "'";
-
+            if (usuario.User != "" && usuario.Clave != "")
             {
-                conexion.Conectar();
-                datosObtenidos = conexion.Leer(instruccion);
-
-                if (datosObtenidos.Read())
+                if (usuario.Clave == clave)
                 {
-                    resultado = datosObtenidos[0].ToString();
+                    conexion.Conectar();
+                    datosObtenidos = conexion.Leer(instruccionSecundaria);
+
+                    if (datosObtenidos.Read())
+                        MessageBox.Show("El usuario ya existe", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else
+                    {
+                        conexion.Desconectar();
+                        conexion.Conectar();
+
+                        if (conexion.EjecutarInstruccion(instruccionPrincipal))
+                        {
+                            MessageBox.Show("El usuario se ha creado correctamente", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            resultado = true;
+                        }
+                    }
+
+                    conexion.Desconectar();
                 }
                 else
-                    MessageBox.Show("Aún no existe un perfil de estudiante para editar", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                conexion.Desconectar();
+                    MessageBox.Show("Las contraseñas no coinciden, intentelo de nuevo", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+                MessageBox.Show("Se debe rellenar todos los espacios en blanco", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             return resultado;
         }
