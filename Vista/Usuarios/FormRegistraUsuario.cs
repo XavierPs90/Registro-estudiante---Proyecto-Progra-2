@@ -1,14 +1,13 @@
-﻿using PracticaLaboratorio2.Clase;
-using PracticaLaboratorio2.Logica;
+﻿using PracticaLaboratorio2.Logica;
 using System;
 using System.Windows.Forms;
 
-namespace PracticaLaboratorio2.Pruebas.Vista
+namespace PracticaLaboratorio2.Vista.Matriculas
 {
     public partial class FormRegistraUsuario : Form
     {
         private LogicaUsuario logicaUsuario = new LogicaUsuario();
-        private Usuario usuario = new Usuario();
+        private Clase.Usuario usuario = new Clase.Usuario();
         private String confirmaClave;
 
         public FormRegistraUsuario()

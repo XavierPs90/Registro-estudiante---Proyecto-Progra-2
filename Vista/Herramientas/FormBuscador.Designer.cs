@@ -84,7 +84,7 @@ namespace PracticaLaboratorio2.Vista.Herramientas
             this.checkBoxUsuario.Name = "checkBoxUsuario";
             this.checkBoxUsuario.Size = new System.Drawing.Size(62, 17);
             this.checkBoxUsuario.TabIndex = 3;
-            this.checkBoxUsuario.Text = "Usuario";
+            this.checkBoxUsuario.Text = "Matricula";
             this.checkBoxUsuario.UseVisualStyleBackColor = true;
             // 
             // checkBoxCurso

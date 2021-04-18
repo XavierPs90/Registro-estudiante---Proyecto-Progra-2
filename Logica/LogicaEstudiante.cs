@@ -10,18 +10,19 @@ namespace PracticaLaboratorio2.Logica
 {
     class LogicaEstudiante
     {
+        String instruccion, instruccionKey, instruccionPrincipal;
+        NpgsqlDataReader datosObtenidos; 
+        DataTable dataTable;
+        BindingSource regresa = new BindingSource();
         private Conexion conexion = new Conexion();
         public List<String> estudiante = new List<string>();
-        
+        Boolean resultado = false;
+
         public Boolean CrearEstudiante(Student estudiante)
         {
-            String instruccionKey, instruccionPrincipal;
-            NpgsqlDataReader datosObtenidos;
-
             instruccionKey = "select usuario from estudiante where usuario = '" + estudiante.Usuario + "'";
             instruccionPrincipal = "insert into estudiante (cedula, nombre, edad, usuario)" + " values ('" + estudiante.Cedula + "', '" + estudiante.Nombre + "', '" + estudiante.Edad + "', '" + estudiante.Usuario + "')";
-            Boolean resultado = false;
-
+            
             if (estudiante.Cedula != "" && estudiante.Nombre != "" && estudiante.Edad != "")
             {
                 if (estudiante.Usuario != null)
@@ -56,9 +57,8 @@ namespace PracticaLaboratorio2.Logica
 
         public Boolean EditarEstudiante(Student estudianteActual, Student estudianteNuevo) 
         {
-            String instruccion = "update estudiante set cedula = '" + estudianteNuevo.Cedula + "', nombre = '" + estudianteNuevo.Nombre + "', edad = '" + estudianteNuevo.Edad + "' where cedula = '" + estudianteActual.Cedula + "'";
-            Boolean resultado = false;
-
+            instruccion = "update estudiante set cedula = '" + estudianteNuevo.Cedula + "', nombre = '" + estudianteNuevo.Nombre + "', edad = '" + estudianteNuevo.Edad + "' where cedula = '" + estudianteActual.Cedula + "'";
+            
             conexion.Conectar();
 
             if (conexion.EjecutarInstruccion(instruccion))
@@ -74,7 +74,7 @@ namespace PracticaLaboratorio2.Logica
 
         public void EliminarEstudiante(String cedula)
         {
-            String instruccion = "delete from estudiante where cedula = '" + cedula + "'";
+            instruccion = "delete from estudiante where cedula = '" + cedula + "'";
 
             conexion.Conectar();
             
@@ -86,9 +86,7 @@ namespace PracticaLaboratorio2.Logica
 
         public BindingSource MostrarListaEstudiantes() 
         {
-            BindingSource regresa = new BindingSource();
-            DataTable dataTable;
-            String instruccion = "select cedula, nombre, edad from estudiante";
+            instruccion = "select cedula, nombre, edad from estudiante";
 
             conexion.Conectar();
             dataTable = conexion.ObtenerDataTable(instruccion);
@@ -100,9 +98,7 @@ namespace PracticaLaboratorio2.Logica
 
         public Boolean CargarEstudianteActual(String usuario) 
         {
-            NpgsqlDataReader datosObtenidos;
-            String instruccion = "select cedula, nombre, edad from estudiante where usuario = '" + usuario + "'";
-            Boolean resultado;
+            instruccion = "select cedula, nombre, edad from estudiante where usuario = '" + usuario + "'";
             
             conexion.Conectar();
             datosObtenidos = conexion.Leer(instruccion);
@@ -124,10 +120,8 @@ namespace PracticaLaboratorio2.Logica
 
         public Boolean CargarUsuario(String usuario) 
         {
-            NpgsqlDataReader datosObtenidos;
-            String instruccion = "select usuario from estudiante where usuario = '" + usuario + "'";
-            Boolean resultado;
-
+            instruccion = "select usuario from estudiante where usuario = '" + usuario + "'";
+            
             conexion.Conectar();
             datosObtenidos = conexion.Leer(instruccion);
 

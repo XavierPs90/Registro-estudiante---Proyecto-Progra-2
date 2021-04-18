@@ -33,6 +33,7 @@ namespace PracticaLaboratorio2
         private FormEditaPeriodos formEditaPeriodos = new FormEditaPeriodos();
         private FormEliminaPeriodos formEliminaPeriodos = new FormEliminaPeriodos();
         private FormMuestraPeriodos formMuestraPeriodos = new FormMuestraPeriodos();
+        private FormCreaMatriculas formCreaMatriculas = new FormCreaMatriculas();
         private FormEliminaMatriculas formEliminaMatricula = new FormEliminaMatriculas();
         private FormGeneraReportes formGeneraReportes = new FormGeneraReportes();
         private FormBuscador formBuscador = new FormBuscador();
@@ -88,6 +89,9 @@ namespace PracticaLaboratorio2
                 // MATRICULAS
                 editarToolStripMenuMatriculas.Enabled = false;
                 editarToolStripMenuMatriculas.Visible = false;
+                // BUSCADOR
+                herramientasToolStripMenu.Enabled = false;
+                herramientasToolStripMenu.Visible = false;
             }
         }
 
@@ -216,14 +220,19 @@ namespace PracticaLaboratorio2
          *---------------------MENU-MATRICULAS------------------------- 
          ------------------------------------------------------------*/
 
-        private void eliminarToolStripMenuMatriculas_Click(object sender, EventArgs e)
+        private void crearToolStripMenuIMatriculas_Click(object sender, EventArgs e)
         {
-            formEliminaMatricula.ShowDialog();
-        }
+            if (formLogin.Usuario != "")
+            {
+                if (formCreaMatriculas.Perfil == "administrador")
+                    formCreaMatriculas.Usuario = formCreaEstudiante.Usuario;
+                else
+                    formCreaMatriculas.Usuario = formLogin.Usuario;
 
-        private void reporteToolStripMenuMatriculas_Click(object sender, EventArgs e)
-        {
-            formGeneraReportes.ShowDialog();
+                formCreaMatriculas.ShowDialog();
+            }
+            else
+                MessageBox.Show("Primero debe crear un usuario y un estudiante para realizar la matricula ", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /*-------------------------------------------------------------
@@ -234,5 +243,7 @@ namespace PracticaLaboratorio2
         {
             formBuscador.ShowDialog();
         }
+
+        
     }
 }

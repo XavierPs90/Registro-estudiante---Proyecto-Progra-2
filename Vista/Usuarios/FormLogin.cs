@@ -1,6 +1,6 @@
 ﻿using PracticaLaboratorio2.Clase;
 using PracticaLaboratorio2.Logica;
-using PracticaLaboratorio2.Pruebas.Vista;
+using PracticaLaboratorio2.Vista.Matriculas;
 using System;
 using System.Windows.Forms;
 
@@ -39,7 +39,7 @@ namespace PracticaLaboratorio2.Vista
         {
             Usuario = txtUsuario.Text.ToLower();
 
-            Usuario usuario = new Usuario
+            Clase.Usuario usuario = new Clase.Usuario
             {
                 User = txtUsuario.Text.ToLower(),
                 Clave = txtClave.Text

@@ -1,6 +1,7 @@
 ﻿using Npgsql;
 using PracticaLaboratorio2.Datos;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 
@@ -8,17 +9,19 @@ namespace PracticaLaboratorio2.Logica
 {
     class LogicaPeriodo
     {
+        String instruccion, instruccionKey, instruccionPrincipal;
+        DataTable dataTable;
+        NpgsqlDataReader datosObtenidos;
+        BindingSource regresa = new BindingSource();
         Conexion conexion = new Conexion();
+        Boolean resultado = false;
+        List<String> lista = new List<string>();
 
         public Boolean CrearPeriodo(String periodo)
         {
-            String instruccionKey, instruccionPrincipal;
-            NpgsqlDataReader datosObtenidos;
-
             instruccionKey = "select * from periodo where periodo = '" + periodo + "'";
             instruccionPrincipal = "insert into periodo values ('" + periodo + "')";
-            Boolean resultado = false;
-
+            
             if (periodo != "")
             {
                 conexion.Conectar();
@@ -48,9 +51,8 @@ namespace PracticaLaboratorio2.Logica
 
         public Boolean EditarPeriodo(String periodoActual, String periodoNuevo)
         {
-            String instruccion = "update periodo set periodo = '" + periodoNuevo + "' where periodo = '" + periodoActual + "'";
-            Boolean resultado = false;
-
+            instruccion = "update periodo set periodo = '" + periodoNuevo + "' where periodo = '" + periodoActual + "'";
+            
             conexion.Conectar();
 
             if (conexion.EjecutarInstruccion(instruccion))
@@ -66,7 +68,7 @@ namespace PracticaLaboratorio2.Logica
 
         public void EliminarPeriodo(String periodo)
         {
-            String instruccion = "delete from periodo where periodo = '" + periodo + "'";
+            instruccion = "delete from periodo where periodo = '" + periodo + "'";
 
             conexion.Conectar();
 
@@ -78,9 +80,7 @@ namespace PracticaLaboratorio2.Logica
 
         public BindingSource MostrarListaPeriodos()
         {
-            BindingSource regresa = new BindingSource();
-            DataTable dataTable;
-            String instruccion = "select * from periodo";
+            instruccion = "select * from periodo";
 
             conexion.Conectar();
             dataTable = conexion.ObtenerDataTable(instruccion);
@@ -88,6 +88,29 @@ namespace PracticaLaboratorio2.Logica
             regresa.DataSource = dataTable;
 
             return regresa;
+        }
+
+        public List<String> ObtenerPeriodos()
+        {
+            instruccion = "select * from periodo";
+
+            conexion.Conectar();
+            datosObtenidos = conexion.Leer(instruccion);
+
+            while (datosObtenidos.Read())
+            {
+                lista.Add(datosObtenidos[0].ToString());
+            }
+
+            conexion.Desconectar();
+
+            return lista;
+        }
+
+        public void VaciarListaPeriodos()
+        {
+            if (lista.Count > 0)
+                lista.RemoveRange(1, lista.Count);
         }
     }
 }

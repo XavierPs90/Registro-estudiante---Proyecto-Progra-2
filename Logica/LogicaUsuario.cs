@@ -9,15 +9,16 @@ namespace PracticaLaboratorio2.Logica
 {
     class LogicaUsuario
     {
+        DataTable dataTable;
+        NpgsqlDataReader datosObtenidos;
+        String instruccion, instruccionKey, instruccionPrincipal, instruccionSecundaria;
         Conexion conexion = new Conexion();
+        BindingSource regresa = new BindingSource();
+        Boolean resultado = false;
 
         public Usuario ValidarUsuario(Usuario usuario)
         {
-            NpgsqlDataReader datosObtenidos;
-            String instruccion;
-
             instruccion = "select perfil from usuario where usuario = '" + usuario.User + "' and clave = '" + usuario.Clave + "'";
-
 
             if (usuario.User == "" || usuario.Clave == "")
             {
@@ -44,12 +45,8 @@ namespace PracticaLaboratorio2.Logica
 
         public Boolean CrearUsuario(Usuario usuario) 
         {
-            String instruccionKey, instruccionPrincipal;
-            NpgsqlDataReader datosObtenidos;
-
             instruccionKey = "select perfil from usuario where usuario = '" + usuario.User + "'";
             instruccionPrincipal = "insert into usuario (usuario, clave, perfil) values ('" + usuario.User + "', '" + usuario.Clave + "', '" + usuario.Perfil + "')";
-            Boolean resultado = false;
             
             if (usuario.User != "" && usuario.Clave != "" && usuario.Perfil != null) 
             {
@@ -80,9 +77,8 @@ namespace PracticaLaboratorio2.Logica
         
         public Boolean EditarUsuario(Usuario usuarioActual, Usuario usuarioNuevo)
         {
-            String instruccion = "update usuario set usuario = '" + usuarioNuevo.User + "', clave = '" + usuarioNuevo.Clave + "', perfil = '" + usuarioNuevo.Perfil + "' where usuario = '" + usuarioActual.User + "'";
-            Boolean resultado = false;
-
+            instruccion = "update usuario set usuario = '" + usuarioNuevo.User + "', clave = '" + usuarioNuevo.Clave + "', perfil = '" + usuarioNuevo.Perfil + "' where usuario = '" + usuarioActual.User + "'";
+            
             conexion.Conectar();
 
             if (conexion.EjecutarInstruccion(instruccion)) 
@@ -98,7 +94,7 @@ namespace PracticaLaboratorio2.Logica
         
         public void EliminarUsuario(String usuario)
         {
-            String instruccion = "delete from usuario where usuario = '" + usuario + "'";
+            instruccion = "delete from usuario where usuario = '" + usuario + "'";
 
             conexion.Conectar();
 
@@ -110,9 +106,7 @@ namespace PracticaLaboratorio2.Logica
 
         public BindingSource MostrarListaUsuarios()
         {
-            BindingSource regresa = new BindingSource();
-            DataTable dataTable;
-            String instruccion = "select * from usuario where perfil = 'estudiante'";
+            instruccion = "select * from usuario where perfil = 'estudiante'";
 
             conexion.Conectar();
             dataTable = conexion.ObtenerDataTable(instruccion);
@@ -124,9 +118,6 @@ namespace PracticaLaboratorio2.Logica
 
         public Boolean RegistrarUsuario(Usuario usuario, String clave)
         {
-            String instruccionSecundaria, instruccionPrincipal;
-            NpgsqlDataReader datosObtenidos;
-            Boolean resultado = false;
             instruccionSecundaria = "select * from usuario where usuario = '" + usuario.User + "' and clave = '" + usuario.Clave + "'";
             instruccionPrincipal = "insert into usuario (usuario, clave, perfil) values ('" + usuario.User + "', '" + usuario.Clave + "', '" + usuario.Perfil + "')";
 

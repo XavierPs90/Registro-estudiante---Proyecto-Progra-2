@@ -85,20 +85,25 @@
     <Compile Include="Datos\Conexion.cs" />
     <Compile Include="Logica\LogicaCurso.cs" />
     <Compile Include="Logica\LogicaEstudiante.cs" />
+    <Compile Include="Logica\LogicaMatricula.cs" />
     <Compile Include="Logica\LogicaPeriodo.cs" />
     <Compile Include="Logica\LogicaUsuario.cs" />
-    <Compile Include="Pruebas\Logica\LogEstudiante.cs" />
-    <Compile Include="Pruebas\Logica\LogUsuario.cs" />
-    <Compile Include="Pruebas\Vista\FormMatricula.cs">
+    <Compile Include="Vista\Matriculas\FormComprobante.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pruebas\Vista\FormMatricula.Designer.cs">
-      <DependentUpon>FormMatricula.cs</DependentUpon>
+    <Compile Include="Vista\Matriculas\FormComprobante.Designer.cs">
+      <DependentUpon>FormComprobante.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pruebas\Vista\FormRegistraUsuario.cs">
+    <Compile Include="Vista\Matriculas\FormCreaMatriculas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pruebas\Vista\FormRegistraUsuario.Designer.cs">
+    <Compile Include="Vista\Matriculas\FormCreaMatriculas.Designer.cs">
+      <DependentUpon>FormCreaMatriculas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Usuarios\FormRegistraUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Usuarios\FormRegistraUsuario.Designer.cs">
       <DependentUpon>FormRegistraUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Cursos\FormCreaCursos.cs">
@@ -160,12 +165,6 @@
     </Compile>
     <Compile Include="Vista\Herramientas\FormBuscador.Designer.cs">
       <DependentUpon>FormBuscador.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\Matriculas\FormCreaMatriculas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Matriculas\FormCreaMatriculas.Designer.cs">
-      <DependentUpon>FormCreaMatriculas.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Matriculas\FormEditaMatriculas.cs">
       <SubType>Form</SubType>
@@ -247,10 +246,13 @@
     <Compile Include="Vista\Usuarios\FormMuestraUsuarios.Designer.cs">
       <DependentUpon>FormMuestraUsuarios.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Pruebas\Vista\FormMatricula.resx">
-      <DependentUpon>FormMatricula.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\Matriculas\FormComprobante.resx">
+      <DependentUpon>FormComprobante.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pruebas\Vista\FormRegistraUsuario.resx">
+    <EmbeddedResource Include="Vista\Matriculas\FormCreaMatriculas.resx">
+      <DependentUpon>FormCreaMatriculas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Usuarios\FormRegistraUsuario.resx">
       <DependentUpon>FormRegistraUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Cursos\FormCreaCursos.resx">
@@ -282,9 +284,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Herramientas\FormBuscador.resx">
       <DependentUpon>FormBuscador.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Matriculas\FormCreaMatriculas.resx">
-      <DependentUpon>FormCreaMatriculas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Matriculas\FormEditaMatriculas.resx">
       <DependentUpon>FormEditaMatriculas.cs</DependentUpon>
@@ -349,7 +348,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Pruebas\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Imagenes\fondo-principal.jpg" />
   </ItemGroup>

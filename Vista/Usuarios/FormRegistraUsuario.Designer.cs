@@ -1,5 +1,5 @@
 ﻿
-namespace PracticaLaboratorio2.Pruebas.Vista
+namespace PracticaLaboratorio2.Vista.Matriculas
 {
     partial class FormRegistraUsuario
     {

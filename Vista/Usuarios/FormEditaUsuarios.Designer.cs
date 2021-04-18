@@ -100,7 +100,7 @@ namespace PracticaLaboratorio2.Vista.Usuarios
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(46, 13);
             this.lblUsuario.TabIndex = 17;
-            this.lblUsuario.Text = "Usuario:";
+            this.lblUsuario.Text = "Matricula:";
             // 
             // dataGridViewEditaUsuarios
             // 

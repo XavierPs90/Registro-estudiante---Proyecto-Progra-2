@@ -1,6 +1,7 @@
 ﻿using Npgsql;
 using PracticaLaboratorio2.Datos;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 
@@ -8,17 +9,18 @@ namespace PracticaLaboratorio2.Logica
 {
     class LogicaCurso
     {
+        String instruccion, instruccionKey, instruccionPrincipal;
+        NpgsqlDataReader datosObtenidos;
+        DataTable dataTable;
         Conexion conexion = new Conexion();
-
+        Boolean resultado = false;
+        List<String> lista = new List<string>();
+        
         public Boolean CrearCurso(String curso)
         {
-            String instruccionKey, instruccionPrincipal;
-            NpgsqlDataReader datosObtenidos;
-
             instruccionKey = "select * from curso where curso = '" + curso + "'";
             instruccionPrincipal = "insert into curso values ('" + curso + "')";
-            Boolean resultado = false;
-
+            
             if (curso != "")
             {
                 conexion.Conectar();
@@ -48,9 +50,8 @@ namespace PracticaLaboratorio2.Logica
 
         public Boolean EditarCursos(String cursoActual, String cursoNuevo)
         {
-            String instruccion = "update curso set curso = '" + cursoNuevo + "' where curso = '" + cursoActual + "'";
-            Boolean resultado = false;
-
+            instruccion = "update curso set curso = '" + cursoNuevo + "' where curso = '" + cursoActual + "'";
+            
             conexion.Conectar();
 
             if (conexion.EjecutarInstruccion(instruccion))
@@ -66,7 +67,7 @@ namespace PracticaLaboratorio2.Logica
 
         public void EliminarCurso(String curso)
         {
-            String instruccion = "delete from curso where curso = '" + curso + "'";
+            instruccion = "delete from curso where curso = '" + curso + "'";
 
             conexion.Conectar();
 
@@ -79,8 +80,7 @@ namespace PracticaLaboratorio2.Logica
         public BindingSource MostrarListaCursos()
         {
             BindingSource regresa = new BindingSource();
-            DataTable dataTable;
-            String instruccion = "select * from curso";
+            instruccion = "select * from curso";
 
             conexion.Conectar();
             dataTable = conexion.ObtenerDataTable(instruccion);
@@ -88,6 +88,29 @@ namespace PracticaLaboratorio2.Logica
             regresa.DataSource = dataTable;
 
             return regresa;
+        }
+
+        public List<String> ObtenerCursos() 
+        {
+            instruccion = "select * from curso";
+
+            conexion.Conectar();
+            datosObtenidos = conexion.Leer(instruccion);
+
+            while (datosObtenidos.Read())
+            {
+                    lista.Add(datosObtenidos[0].ToString());
+            }
+
+            conexion.Desconectar();
+
+            return lista;
+        }
+
+        public void VaciarListaCursos() 
+        {
+            if (lista.Count > 0)
+                lista.RemoveRange(1, lista.Count);
         }
     }
 }

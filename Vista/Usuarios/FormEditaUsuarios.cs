@@ -56,8 +56,8 @@ namespace PracticaLaboratorio2.Vista.Usuarios
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Usuario usuarioActual = new Usuario();
-            Usuario usuarioNuevo = new Usuario();
+            Clase.Usuario usuarioActual = new Clase.Usuario();
+            Clase.Usuario usuarioNuevo = new Clase.Usuario();
             
             if (txtUsuario.Text != "" || txtClave.Text != "" || txtPerfil.Text != "") 
             {

@@ -31,7 +31,7 @@ namespace PracticaLaboratorio2.Vista.Usuarios
         private void btnCrear_Click(object sender, EventArgs e)
         {
             LogicaUsuario logicaUsuario = new LogicaUsuario();
-            Usuario usuario = new Usuario();
+            Clase.Usuario usuario = new Clase.Usuario();
             usuario.User = txtUsuario.Text.ToLower();
             usuario.Clave = txtClave.Text.ToLower();
             usuario.Perfil = comboBoxPerfil.SelectedItem.ToString().ToLower();
