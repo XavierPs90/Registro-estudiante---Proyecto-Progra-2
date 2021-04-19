@@ -55,9 +55,11 @@ namespace PracticaLaboratorio2
             this.mostrarListaToolStripMenuPeriodos = new System.Windows.Forms.ToolStripMenuItem();
             this.matrículasToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.crearToolStripMenuIMatriculas = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarToolStripMenuMatriculas = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuMatriculas = new System.Windows.Forms.ToolStripMenuItem();
+            this.mostrarListaToolStripMenuMatriculas = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.buscadorToolStripMenuHerramientas = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarToolStripMenuMatriculas = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -260,7 +262,9 @@ namespace PracticaLaboratorio2
             // 
             this.matrículasToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.crearToolStripMenuIMatriculas,
-            this.editarToolStripMenuMatriculas});
+            this.editarToolStripMenuMatriculas,
+            this.eliminarToolStripMenuMatriculas,
+            this.mostrarListaToolStripMenuMatriculas});
             this.matrículasToolStripMenu.Name = "matrículasToolStripMenu";
             this.matrículasToolStripMenu.Size = new System.Drawing.Size(69, 20);
             this.matrículasToolStripMenu.Text = "Matrícula";
@@ -271,6 +275,26 @@ namespace PracticaLaboratorio2
             this.crearToolStripMenuIMatriculas.Size = new System.Drawing.Size(180, 22);
             this.crearToolStripMenuIMatriculas.Text = "Crear";
             this.crearToolStripMenuIMatriculas.Click += new System.EventHandler(this.crearToolStripMenuIMatriculas_Click);
+            // 
+            // editarToolStripMenuMatriculas
+            // 
+            this.editarToolStripMenuMatriculas.Name = "editarToolStripMenuMatriculas";
+            this.editarToolStripMenuMatriculas.Size = new System.Drawing.Size(180, 22);
+            this.editarToolStripMenuMatriculas.Text = "Editar";
+            // 
+            // eliminarToolStripMenuMatriculas
+            // 
+            this.eliminarToolStripMenuMatriculas.Name = "eliminarToolStripMenuMatriculas";
+            this.eliminarToolStripMenuMatriculas.Size = new System.Drawing.Size(180, 22);
+            this.eliminarToolStripMenuMatriculas.Text = "Eliminar";
+            this.eliminarToolStripMenuMatriculas.Click += new System.EventHandler(this.eliminarToolStripMenuMatriculas_Click);
+            // 
+            // mostrarListaToolStripMenuMatriculas
+            // 
+            this.mostrarListaToolStripMenuMatriculas.Name = "mostrarListaToolStripMenuMatriculas";
+            this.mostrarListaToolStripMenuMatriculas.Size = new System.Drawing.Size(180, 22);
+            this.mostrarListaToolStripMenuMatriculas.Text = "Mostrar lista";
+            this.mostrarListaToolStripMenuMatriculas.Click += new System.EventHandler(this.mostrarListaToolStripMenuIMatriculas_Click);
             // 
             // herramientasToolStripMenu
             // 
@@ -286,12 +310,6 @@ namespace PracticaLaboratorio2
             this.buscadorToolStripMenuHerramientas.Size = new System.Drawing.Size(123, 22);
             this.buscadorToolStripMenuHerramientas.Text = "Buscador";
             this.buscadorToolStripMenuHerramientas.Click += new System.EventHandler(this.buscadorToolStripMenuHerramientas_Click);
-            // 
-            // editarToolStripMenuMatriculas
-            // 
-            this.editarToolStripMenuMatriculas.Name = "editarToolStripMenuMatriculas";
-            this.editarToolStripMenuMatriculas.Size = new System.Drawing.Size(180, 22);
-            this.editarToolStripMenuMatriculas.Text = "Editar";
             // 
             // FormPrincipal
             // 
@@ -344,6 +362,8 @@ namespace PracticaLaboratorio2
         private System.Windows.Forms.ToolStripMenuItem mostrarListaToolStripMenuPeriodos;
         private System.Windows.Forms.ToolStripMenuItem crearToolStripMenuIMatriculas;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuMatriculas;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuMatriculas;
+        private System.Windows.Forms.ToolStripMenuItem mostrarListaToolStripMenuMatriculas;
     }
 }
 

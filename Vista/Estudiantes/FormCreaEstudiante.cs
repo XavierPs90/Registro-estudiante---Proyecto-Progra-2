@@ -7,12 +7,18 @@ namespace PracticaLaboratorio2.Vista.Estudiantes
 {
     public partial class FormCreaEstudiante : Form
     {
-        private String usuario;
+        private String usuario, perfil;
 
         public String Usuario
         {
             get { return usuario; }
             set { usuario = value; }
+        }
+
+        public String Perfil
+        {
+            get { return perfil; }
+            set { perfil = value; }
         }
 
         public FormCreaEstudiante()
@@ -44,11 +50,23 @@ namespace PracticaLaboratorio2.Vista.Estudiantes
 
             LogicaEstudiante logicaEstudiante = new LogicaEstudiante();
 
-            if (logicaEstudiante.CrearEstudiante(estudiante)) 
+            if (perfil == "administrador")
             {
-                txtCedula.Text = "";
-                txtNombre.Text = "";
-                txtEdad.Text = "";
+                if (logicaEstudiante.CrearEstudiantes(estudiante))
+                {
+                    txtCedula.Text = "";
+                    txtNombre.Text = "";
+                    txtEdad.Text = "";
+                }
+            }
+            else
+            {
+                if (logicaEstudiante.CrearEstudiante(estudiante))
+                {
+                    txtCedula.Text = "";
+                    txtNombre.Text = "";
+                    txtEdad.Text = "";
+                }
             }
         }
     }

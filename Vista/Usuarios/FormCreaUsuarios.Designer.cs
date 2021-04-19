@@ -98,7 +98,7 @@ namespace PracticaLaboratorio2.Vista.Usuarios
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(46, 13);
             this.lblUsuario.TabIndex = 8;
-            this.lblUsuario.Text = "Matricula:";
+            this.lblUsuario.Text = "Usuario:";
             // 
             // comboBoxPerfil
             // 

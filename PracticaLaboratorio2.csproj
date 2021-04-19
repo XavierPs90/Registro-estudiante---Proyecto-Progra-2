@@ -100,6 +100,12 @@
     <Compile Include="Vista\Matriculas\FormCreaMatriculas.Designer.cs">
       <DependentUpon>FormCreaMatriculas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Matriculas\FormMuestraMatriculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Matriculas\FormMuestraMatriculas.Designer.cs">
+      <DependentUpon>FormMuestraMatriculas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Usuarios\FormRegistraUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,12 +178,6 @@
     <Compile Include="Vista\Matriculas\FormEliminaMatriculas.Designer.cs">
       <DependentUpon>FormEliminaMatriculas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Matriculas\FormGeneraReportes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Matriculas\FormGeneraReportes.Designer.cs">
-      <DependentUpon>FormGeneraReportes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vista\Periodos\FormCreaPeriodos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +246,9 @@
     <EmbeddedResource Include="Vista\Matriculas\FormCreaMatriculas.resx">
       <DependentUpon>FormCreaMatriculas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Matriculas\FormMuestraMatriculas.resx">
+      <DependentUpon>FormMuestraMatriculas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Usuarios\FormRegistraUsuario.resx">
       <DependentUpon>FormRegistraUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,9 +284,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Matriculas\FormEliminaMatriculas.resx">
       <DependentUpon>FormEliminaMatriculas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Matriculas\FormGeneraReportes.resx">
-      <DependentUpon>FormGeneraReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Periodos\FormCreaPeriodos.resx">
       <DependentUpon>FormCreaPeriodos.cs</DependentUpon>

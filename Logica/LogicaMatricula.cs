@@ -2,6 +2,7 @@
 using PracticaLaboratorio2.Datos;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace PracticaLaboratorio2.Logica
@@ -9,12 +10,14 @@ namespace PracticaLaboratorio2.Logica
     class LogicaMatricula
     {
         private int numeroComprobante;
-        private String instruccionKey, instruccionPrincipal;
+        private String instruccion, instruccionKey, instruccionPrincipal, instruccionSecundaria, usuarioMatricula;
         private String[] comprobante; 
         private DateTime fecha_matricula;
         private NpgsqlDataReader datosObtenidos;
         private Boolean resultado = false;
+        DataTable dataTable;
         private Conexion conexion = new Conexion();
+        BindingSource regresa = new BindingSource();
         private LogicaCurso logicaCurso = new LogicaCurso();
         private LogicaPeriodo logicaPeriodo = new LogicaPeriodo();
 
@@ -127,6 +130,49 @@ namespace PracticaLaboratorio2.Logica
             }
             
             conexion.Desconectar();
+        }
+
+        public BindingSource MostrarListaMatriculas()
+        {
+            instruccion = "select cedula, nombre, edad, periodo, fecha_matricula, cod from estudiante inner join matricula on estudiante.usuario = matricula.usuario";
+
+            conexion.Conectar();
+            dataTable = conexion.ObtenerDataTable(instruccion);
+            conexion.Desconectar();
+            regresa.DataSource = dataTable;
+
+            return regresa;
+        }
+
+        public void EliminarMatriculas(String usuario)
+        {
+            instruccionPrincipal = "delete from matricula where usuario = '" + usuario + "'";
+            instruccionSecundaria = "delete from cursosxestudiante where usuario = '" + usuario + "'";
+
+            conexion.Conectar();
+
+            if (conexion.EjecutarInstruccion(instruccionPrincipal) && conexion.EjecutarInstruccion(instruccionSecundaria))
+                MessageBox.Show("Los datos se eliminaron correctamente", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            conexion.Desconectar();
+        }
+
+        public String CargarUsuarioMatricula(String cedula) 
+        {
+            instruccion = "select usuario from estudiante where cedula = '" + cedula + "'";
+
+            conexion.Conectar();
+            datosObtenidos = conexion.Leer(instruccion);
+            
+            if (datosObtenidos.Read())
+            {
+                usuarioMatricula = datosObtenidos[0].ToString();
+                MessageBox.Show("Los datos se eliminaron correctamente", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
+            conexion.Desconectar();
+
+            return usuarioMatricula;
         }
     }
 }

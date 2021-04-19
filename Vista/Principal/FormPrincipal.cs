@@ -33,8 +33,9 @@ namespace PracticaLaboratorio2
         private FormEliminaPeriodos formEliminaPeriodos = new FormEliminaPeriodos();
         private FormMuestraPeriodos formMuestraPeriodos = new FormMuestraPeriodos();
         private FormCreaMatriculas formCreaMatriculas = new FormCreaMatriculas();
+        private FormEliminaMatriculas formEliminaMatriculas = new FormEliminaMatriculas();
+        private FormMuestraMatriculas formMuestraMatriculas = new FormMuestraMatriculas();
         private FormEliminaMatriculas formEliminaMatricula = new FormEliminaMatriculas();
-        private FormGeneraReportes formGeneraReportes = new FormGeneraReportes();
         private FormBuscador formBuscador = new FormBuscador();
 
         public FormPrincipal()
@@ -88,6 +89,10 @@ namespace PracticaLaboratorio2
                 // MATRICULAS
                 editarToolStripMenuMatriculas.Enabled = false;
                 editarToolStripMenuMatriculas.Visible = false;
+                eliminarToolStripMenuMatriculas.Enabled = false;
+                eliminarToolStripMenuMatriculas.Visible = false;
+                mostrarListaToolStripMenuMatriculas.Enabled = false;
+                mostrarListaToolStripMenuMatriculas.Visible = false;
                 // BUSCADOR
                 herramientasToolStripMenu.Enabled = false;
                 herramientasToolStripMenu.Visible = false;
@@ -115,6 +120,7 @@ namespace PracticaLaboratorio2
         private void crearToolStripMenuUsuarios_Click(object sender, EventArgs e)
         {
             formCreaUsuarios.ShowDialog();
+            formCreaEstudiante.Usuario = formCreaUsuarios.Usuario;
         }
 
         private void editarToolStripMenuUsuarios_Click(object sender, EventArgs e)
@@ -140,12 +146,12 @@ namespace PracticaLaboratorio2
 
         private void mostrarListaToolStripMenuUsuarios_Click(object sender, EventArgs e)
         {
-
             if (formEditaUsuarios.User == null)
                 formMuestraUsuarios.Usuario = formLogin.Usuario;
             else 
                 formMuestraUsuarios.Usuario = formEditaUsuarios.User;
-            
+
+            formMuestraUsuarios.Perfil = formLogin.Perfil;
             formMuestraUsuarios.ShowDialog();
         }
 
@@ -155,11 +161,14 @@ namespace PracticaLaboratorio2
 
         private void crearToolStripMenuEstudiante_Click(object sender, EventArgs e)
         {
+            formCreaEstudiante.Perfil = formLogin.Perfil;
+
             if (formLogin.Perfil == "administrador")
                 if (formCreaEstudiante.Usuario != null)
                 {
                     formCreaEstudiante.Usuario = formCreaUsuarios.Usuario;
                     formCreaEstudiante.ShowDialog();
+                    formCreaMatriculas.Usuario = formCreaEstudiante.Usuario;
                 }
                 else
                 {
@@ -171,6 +180,7 @@ namespace PracticaLaboratorio2
                 {
                     formCreaEstudiante.Usuario = formLogin.Usuario;
                     formCreaEstudiante.ShowDialog();
+                    formCreaMatriculas.Usuario = formLogin.Usuario;
                 }
                 else
                     MessageBox.Show("Este usuario ya tiene asignado un estudiante", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -261,17 +271,22 @@ namespace PracticaLaboratorio2
 
         private void crearToolStripMenuIMatriculas_Click(object sender, EventArgs e)
         {
-            if (formLogin.Usuario != "" && formCreaEstudiante.Usuario != "")
+            if (formCreaEstudiante.Usuario != null && formCreaMatriculas.Usuario != null)
             {
-                if (formCreaMatriculas.Perfil == "administrador")
-                    formCreaMatriculas.Usuario = formCreaEstudiante.Usuario;
-                else
-                    formCreaMatriculas.Usuario = formLogin.Usuario;
-
                 formCreaMatriculas.ShowDialog();
             }
             else
-                MessageBox.Show("Primero debe crear un usuario y un estudiante para realizar la matricula ", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Primero debe crear un usuario y un estudiante para realizar la matricula", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void eliminarToolStripMenuMatriculas_Click(object sender, EventArgs e)
+        {
+            formEliminaMatriculas.ShowDialog();
+        }
+
+        private void mostrarListaToolStripMenuIMatriculas_Click(object sender, EventArgs e)
+        {
+            formMuestraMatriculas.ShowDialog();
         }
 
         /*-------------------------------------------------------------
@@ -282,7 +297,5 @@ namespace PracticaLaboratorio2
         {
             formBuscador.ShowDialog();
         }
-
-
     }
 }

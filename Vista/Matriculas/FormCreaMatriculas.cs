@@ -65,7 +65,7 @@ namespace PracticaLaboratorio2.Vista.Matriculas
                 accedeComprobante = true;
             }
             else
-                MessageBox.Show("No se pudo cargar los datos del estudiante", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Primero debe crear un usuario y un estudiante para realizar la matricula", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -110,6 +110,9 @@ namespace PracticaLaboratorio2.Vista.Matriculas
                     {
                         formComprobante.cursos.Add(curso);
                     }
+
+                    Usuario = "";
+                    datosEstudiante.Clear();
                 }
             }
             else
@@ -130,6 +133,11 @@ namespace PracticaLaboratorio2.Vista.Matriculas
                 periodosDisponibles.RemoveRange(0, periodosDisponibles.Count);
 
             Close();
+        }
+
+        public void EliminarMatricula() 
+        {
+            
         }
     }
 }

@@ -49,9 +49,9 @@ C:\Users\U!\source\repos\PracticaLaboratorio2\obj\Debug\PracticaLaboratorio2.Vis
 C:\Users\U!\source\repos\PracticaLaboratorio2\obj\Debug\PracticaLaboratorio2.Vista.Herramientas.FormBuscador.resources
 C:\Users\U!\source\repos\PracticaLaboratorio2\obj\Debug\PracticaLaboratorio2.Vista.Cursos.FormMuestraCursos.resources
 C:\Users\U!\source\repos\PracticaLaboratorio2\obj\Debug\PracticaLaboratorio2.Vista.Matriculas.FormEliminaMatriculas.resources
-C:\Users\U!\source\repos\PracticaLaboratorio2\obj\Debug\PracticaLaboratorio2.Vista.Matriculas.FormGeneraReportes.resources
 C:\Users\U!\source\repos\PracticaLaboratorio2\obj\Debug\PracticaLaboratorio2.Vista.Periodos.FormMuestraPeriodos.resources
 C:\Users\U!\source\repos\PracticaLaboratorio2\obj\Debug\PracticaLaboratorio2.Vista.Usuarios.FormEliminaUsuarios.resources
 C:\Users\U!\source\repos\PracticaLaboratorio2\obj\Debug\PracticaLaboratorio2.Vista.Usuarios.FormMuestraUsuarios.resources
 C:\Users\U!\source\repos\PracticaLaboratorio2\obj\Debug\PracticaLaboratorio2.Vista.Matriculas.FormRegistraUsuario.resources
 C:\Users\U!\source\repos\PracticaLaboratorio2\obj\Debug\PracticaLaboratorio2.Vista.Matriculas.FormComprobante.resources
+C:\Users\U!\source\repos\PracticaLaboratorio2\obj\Debug\PracticaLaboratorio2.Vista.Matriculas.FormMuestraMatriculas.resources

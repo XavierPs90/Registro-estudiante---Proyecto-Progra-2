@@ -71,11 +71,23 @@ namespace PracticaLaboratorio2.Vista.Estudiante
                 estudianteNuevo.Edad = txtEdad.Text.ToLower();
                 estudianteNuevo.Usuario = usuario;
 
-                if (new LogicaEstudiante().EditarEstudiante(estudianteActual, estudianteNuevo))
+                if (perfil == "administrador")
                 {
-                    txtCedula.Text = "";
-                    txtNombre.Text = "";
-                    txtEdad.Text = "";
+                    if (new LogicaEstudiante().EditarEstudiantes(estudianteActual, estudianteNuevo))
+                    {
+                        txtCedula.Text = "";
+                        txtNombre.Text = "";
+                        txtEdad.Text = "";
+                    }
+                }
+                else
+                {
+                    if (new LogicaEstudiante().EditarEstudiante(estudianteActual, estudianteNuevo))
+                    {
+                        txtCedula.Text = "";
+                        txtNombre.Text = "";
+                        txtEdad.Text = "";
+                    }
                 }
             }
             else

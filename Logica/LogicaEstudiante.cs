@@ -51,10 +51,61 @@ namespace PracticaLaboratorio2.Logica
             return resultado;
         }
 
+        public Boolean CrearEstudiantes(Student estudiante)
+        {
+            instruccionKey = "select cedula from estudiante where cedula = '" + estudiante.Cedula + "'";
+            instruccionPrincipal = "insert into estudiante (cedula, nombre, edad, usuario) values ('" + estudiante.Cedula + "', '" + estudiante.Nombre + "', '"
+                                    + estudiante.Edad + "', '" + estudiante.Usuario + "')";
+
+            if (estudiante.Cedula != "" && estudiante.Nombre != "" && estudiante.Edad != "")
+            {
+                conexion.Conectar();
+                datosObtenidos = conexion.Leer(instruccionKey);
+
+                if (!datosObtenidos.Read())
+                {
+                    conexion.Desconectar();
+                    conexion.Conectar();
+
+                    if (conexion.EjecutarInstruccion(instruccionPrincipal))
+                    {
+                        resultado = true;
+                        MessageBox.Show("El estudiante se ha creado correctamente", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                    MessageBox.Show("Este usuario ya tiene asignado un estudiante", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conexion.Desconectar();
+            }
+            else
+                MessageBox.Show("Se debe rellenar todos los espacios en blanco", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            return resultado;
+        }
+
         public Boolean EditarEstudiante(Student estudianteActual, Student estudianteNuevo)
         {
             instruccion = "update estudiante set cedula = '" + estudianteNuevo.Cedula + "', nombre = '" + estudianteNuevo.Nombre + "', edad = '" 
                         + estudianteNuevo.Edad + "' where usuario = '" + estudianteNuevo.Usuario + "'";
+
+            conexion.Conectar();
+
+            if (conexion.EjecutarInstruccion(instruccion))
+            {
+                MessageBox.Show("Los datos se editaron correctamente", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                resultado = true;
+            }
+
+            conexion.Desconectar();
+
+            return resultado;
+        }
+
+        public Boolean EditarEstudiantes(Student estudianteActual, Student estudianteNuevo)
+        {
+            instruccion = "update estudiante set cedula = '" + estudianteNuevo.Cedula + "', nombre = '" + estudianteNuevo.Nombre + "', edad = '"
+                        + estudianteNuevo.Edad + "' where cedula = '" + estudianteActual.Cedula + "'";
 
             conexion.Conectar();
 
