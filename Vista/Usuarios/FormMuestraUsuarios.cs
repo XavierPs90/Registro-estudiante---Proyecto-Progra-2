@@ -6,6 +6,21 @@ namespace PracticaLaboratorio2.Vista.Usuarios
 {
     public partial class FormMuestraUsuarios : Form
     {
+        private String usuario, perfil;
+        BindingSource bindingSource;
+
+        public String Usuario
+        {
+            get { return usuario; }
+            set { usuario = value; }
+        }
+
+        public String Perfil
+        {
+            get { return perfil; }
+            set { perfil = value; }
+        }
+
         public FormMuestraUsuarios()
         {
             InitializeComponent();
@@ -18,7 +33,10 @@ namespace PracticaLaboratorio2.Vista.Usuarios
 
         public void ActualizarTabla()
         {
-            BindingSource bindingSource = new LogicaUsuario().MostrarListaUsuarios();
+            if (perfil == "administrador")
+                bindingSource = new LogicaUsuario().MostrarListaUsuarios();
+            else
+                bindingSource = new LogicaUsuario().MostrarUsuarioEspecífico(usuario);
 
             dataGridViewMuestraUsuarios.DataSource = bindingSource;
             dataGridViewMuestraUsuarios.ClearSelection();

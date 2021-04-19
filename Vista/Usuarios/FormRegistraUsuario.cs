@@ -29,6 +29,7 @@ namespace PracticaLaboratorio2.Vista.Matriculas
 
             if (logicaUsuario.RegistrarUsuario(usuario, confirmaClave)) 
             {
+                logicaUsuario.RegistraUsuarioTablaEstudiante(usuario);
                 txtUsuario.Text = "";
                 txtClave.Text = "";
                 txtConfirmarClave.Text = "";

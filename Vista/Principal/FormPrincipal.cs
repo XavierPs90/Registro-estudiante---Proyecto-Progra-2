@@ -21,7 +21,6 @@ namespace PracticaLaboratorio2
         private FormMuestraUsuarios formMuestraUsuarios = new FormMuestraUsuarios();
         private FormCreaEstudiante formCreaEstudiante = new FormCreaEstudiante();
         private FormEditaEstudiantes formEditaEstudiantes = new FormEditaEstudiantes();
-        private FormEditaEstudiante formEditaEstudiante = new FormEditaEstudiante();
         private LogicaUsuario logicaUsuario = new LogicaUsuario();
         private FormEliminaEstudiantes formEliminaEstudiantes = new FormEliminaEstudiantes();
         private FormMuestraEstudiantes formMuestraEstudiantes = new FormMuestraEstudiantes();
@@ -103,7 +102,7 @@ namespace PracticaLaboratorio2
         {
             Application.Restart();
         }
-        
+
         private void salirToolStripMenuArchivo_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -120,7 +119,18 @@ namespace PracticaLaboratorio2
 
         private void editarToolStripMenuUsuarios_Click(object sender, EventArgs e)
         {
-            formEditaUsuarios.ShowDialog();
+            if (formLogin.Perfil != "administrador")
+            {
+                formEditaUsuarios.User = formLogin.Usuario;
+                formEditaUsuarios.Profile = formLogin.Perfil;
+                formEditaUsuarios.ShowDialog();
+                formLogin.Usuario = formEditaUsuarios.User;
+            }
+            else
+            {
+                formEditaUsuarios.Profile = formLogin.Perfil;
+                formEditaUsuarios.ShowDialog();
+            }
         }
 
         private void eliminarToolStripMenuUsuarios_Click(object sender, EventArgs e)
@@ -130,6 +140,12 @@ namespace PracticaLaboratorio2
 
         private void mostrarListaToolStripMenuUsuarios_Click(object sender, EventArgs e)
         {
+
+            if (formEditaUsuarios.User == null)
+                formMuestraUsuarios.Usuario = formLogin.Usuario;
+            else 
+                formMuestraUsuarios.Usuario = formEditaUsuarios.User;
+            
             formMuestraUsuarios.ShowDialog();
         }
 
@@ -140,21 +156,40 @@ namespace PracticaLaboratorio2
         private void crearToolStripMenuEstudiante_Click(object sender, EventArgs e)
         {
             if (formLogin.Perfil == "administrador")
-                formCreaEstudiante.Usuario = formCreaUsuarios.Usuario;
-            
-            formCreaEstudiante.ShowDialog();
+                if (formCreaEstudiante.Usuario != null)
+                {
+                    formCreaEstudiante.Usuario = formCreaUsuarios.Usuario;
+                    formCreaEstudiante.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Para crear un estudiante primero debe crear otro usuario y luego el estudiante", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            else
+            {
+                if (formCreaEstudiante.Usuario == null)
+                {
+                    formCreaEstudiante.Usuario = formLogin.Usuario;
+                    formCreaEstudiante.ShowDialog();
+                }
+                else
+                    MessageBox.Show("Este usuario ya tiene asignado un estudiante", "Ventana de información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void editarToolStripMenuEstudiantes_Click(object sender, EventArgs e)
         {
-            if (formLogin.Perfil == "administrador")
+            if (formLogin.Perfil != "administrador")
             {
+                formEditaEstudiantes.Usuario = formLogin.Usuario;
+                formEditaEstudiantes.Perfil = formLogin.Perfil;
                 formEditaEstudiantes.ShowDialog();
+                formLogin.Usuario = formEditaEstudiantes.Usuario;
             }
             else
             {
-               formEditaEstudiante.Usuario = formLogin.Usuario;
-               formEditaEstudiante.ShowDialog();
+                formEditaEstudiantes.Perfil = formLogin.Perfil;
+                formEditaEstudiantes.ShowDialog();
             }
         }
 
@@ -165,6 +200,10 @@ namespace PracticaLaboratorio2
 
         private void mostrarListaToolStripMenuEstudiantes_Click(object sender, EventArgs e)
         {
+            if (formLogin.Perfil != "administrador")
+                formMuestraEstudiantes.Usuario = formLogin.Usuario;
+
+            formMuestraEstudiantes.Perfil = formLogin.Perfil;
             formMuestraEstudiantes.ShowDialog();
         }
 
@@ -222,7 +261,7 @@ namespace PracticaLaboratorio2
 
         private void crearToolStripMenuIMatriculas_Click(object sender, EventArgs e)
         {
-            if (formLogin.Usuario != "")
+            if (formLogin.Usuario != "" && formCreaEstudiante.Usuario != "")
             {
                 if (formCreaMatriculas.Perfil == "administrador")
                     formCreaMatriculas.Usuario = formCreaEstudiante.Usuario;
@@ -244,6 +283,6 @@ namespace PracticaLaboratorio2
             formBuscador.ShowDialog();
         }
 
-        
+
     }
 }

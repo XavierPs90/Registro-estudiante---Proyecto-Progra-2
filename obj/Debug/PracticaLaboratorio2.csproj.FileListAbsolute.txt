@@ -33,7 +33,6 @@ C:\Users\U!\source\repos\PracticaLaboratorio2\obj\Debug\PracticaLaboratorio2.csp
 C:\Users\U!\source\repos\PracticaLaboratorio2\obj\Debug\PracticaLaboratorio2.exe
 C:\Users\U!\source\repos\PracticaLaboratorio2\obj\Debug\PracticaLaboratorio2.pdb
 C:\Users\U!\source\repos\PracticaLaboratorio2\obj\Debug\PracticaLaboratorio2.Vista.Estudiantes.FormCreaEstudiante.resources
-C:\Users\U!\source\repos\PracticaLaboratorio2\obj\Debug\PracticaLaboratorio2.Vista.Estudiante.FormEditaEstudiante.resources
 C:\Users\U!\source\repos\PracticaLaboratorio2\obj\Debug\PracticaLaboratorio2.Vista.Estudiante.FormEditaEstudiantes.resources
 C:\Users\U!\source\repos\PracticaLaboratorio2\obj\Debug\PracticaLaboratorio2.Vista.Cursos.FormCreaCursos.resources
 C:\Users\U!\source\repos\PracticaLaboratorio2\obj\Debug\PracticaLaboratorio2.Vista.Cursos.FormEditaCursos.resources

@@ -6,6 +6,21 @@ namespace PracticaLaboratorio2.Vista.Estudiantes
 {
     public partial class FormMuestraEstudiantes : Form
     {
+        String usuario, perfil;
+        BindingSource bindingSource;
+
+        public String Usuario
+        {
+            get { return usuario; }
+            set { usuario = value; }
+        }
+
+        public String Perfil
+        {
+            get { return perfil; }
+            set { perfil = value; }
+        }
+
         public FormMuestraEstudiantes()
         {
             InitializeComponent();
@@ -18,7 +33,10 @@ namespace PracticaLaboratorio2.Vista.Estudiantes
 
         public void ActualizarTabla() 
         {
-            BindingSource bindingSource = new LogicaEstudiante().MostrarListaEstudiantes();
+            if (perfil == "administrador")
+                bindingSource = new LogicaEstudiante().MostrarListaEstudiantes();
+            else
+                bindingSource = new LogicaEstudiante().MostrarEstudianteEspecífico(usuario);
 
             dGVMuestraListaEstudiantes.DataSource = bindingSource;
             dGVMuestraListaEstudiantes.ClearSelection();
@@ -27,11 +45,6 @@ namespace PracticaLaboratorio2.Vista.Estudiantes
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void bntActualizar_Click(object sender, EventArgs e)
-        {
-            ActualizarTabla();
         }
     }
 }

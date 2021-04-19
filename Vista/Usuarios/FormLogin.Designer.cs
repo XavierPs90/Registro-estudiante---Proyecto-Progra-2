@@ -54,7 +54,7 @@ namespace PracticaLaboratorio2.Vista
             this.lblClave.Name = "lblClave";
             this.lblClave.Size = new System.Drawing.Size(93, 13);
             this.lblClave.TabIndex = 8;
-            this.lblClave.Text = "Digite contrasena:";
+            this.lblClave.Text = "Digite contraseña:";
             // 
             // txtClave
             // 

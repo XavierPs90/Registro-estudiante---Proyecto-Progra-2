@@ -7,7 +7,20 @@ namespace PracticaLaboratorio2.Vista.Estudiante
 {
     public partial class FormEditaEstudiantes : Form
     {
-        private String cedula, nombre, edad;
+        private String cedula, nombre, edad, perfil, usuario;
+        BindingSource bindingSource;
+
+        public String Usuario
+        {
+            get { return usuario; }
+            set { usuario = value; }
+        }
+
+        public String Perfil
+        {
+            get { return perfil; }
+            set { perfil = value; }
+        }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -17,11 +30,6 @@ namespace PracticaLaboratorio2.Vista.Estudiante
         public FormEditaEstudiantes()
         {
             InitializeComponent();
-        }
-
-        private void dataGridViewEditaEstudiantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
         }
 
         private void FormEditaEstudiantes_Load(object sender, EventArgs e)
@@ -53,7 +61,7 @@ namespace PracticaLaboratorio2.Vista.Estudiante
             Student estudianteActual = new Student();
             Student estudianteNuevo = new Student();
 
-            if (txtCedula.Text  != "" || txtNombre.Text != "" || txtEdad.Text != "")
+            if (txtCedula.Text != "" || txtNombre.Text != "" || txtEdad.Text != "")
             {
                 estudianteActual.Cedula = cedula;
                 estudianteActual.Nombre = nombre;
@@ -61,6 +69,7 @@ namespace PracticaLaboratorio2.Vista.Estudiante
                 estudianteNuevo.Cedula = txtCedula.Text.ToLower();
                 estudianteNuevo.Nombre = txtNombre.Text.ToLower();
                 estudianteNuevo.Edad = txtEdad.Text.ToLower();
+                estudianteNuevo.Usuario = usuario;
 
                 if (new LogicaEstudiante().EditarEstudiante(estudianteActual, estudianteNuevo))
                 {
@@ -77,7 +86,10 @@ namespace PracticaLaboratorio2.Vista.Estudiante
 
         public void ActualizarTabla()
         {
-            BindingSource bindingSource = new LogicaEstudiante().MostrarListaEstudiantes();
+            if (perfil == "administrador")
+                bindingSource = new LogicaEstudiante().MostrarListaEstudiantes();
+            else
+                bindingSource = new LogicaEstudiante().MostrarEstudianteEspecífico(usuario);
 
             dataGridViewEditaEstudiantes.DataSource = bindingSource;
             dataGridViewEditaEstudiantes.ClearSelection();

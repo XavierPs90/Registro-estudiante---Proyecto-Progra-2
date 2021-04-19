@@ -7,7 +7,22 @@ namespace PracticaLaboratorio2.Vista.Usuarios
 {
     public partial class FormEditaUsuarios : Form
     {
-        private String usuario, clave, perfil;
+        private String user, profile, usuario, clave, perfil;
+        private BindingSource bindingSource;
+        private LogicaUsuario logicaUsuario = new LogicaUsuario();
+
+        public String User
+        {
+            get { return user; }
+            set { user = value; }
+        }
+
+        public String Profile
+        {
+            get { return profile; }
+            set { profile = value; }
+        }
+
 
         public FormEditaUsuarios()
         {
@@ -16,9 +31,6 @@ namespace PracticaLaboratorio2.Vista.Usuarios
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            txtUsuario.Text = usuario;
-            txtClave.Text = clave;
-            txtPerfil.Text = perfil;
             Close();
         }
 
@@ -29,7 +41,10 @@ namespace PracticaLaboratorio2.Vista.Usuarios
 
         public void ActualizarTabla()
         {
-            BindingSource bindingSource = new LogicaUsuario().MostrarListaUsuarios();
+            if (profile == "administrador")
+                bindingSource = logicaUsuario.MostrarListaUsuarios();
+            else
+                bindingSource = logicaUsuario.MostrarUsuarioEspecífico(user);
 
             dataGridViewEditaUsuarios.DataSource = bindingSource;
             dataGridViewEditaUsuarios.ClearSelection();
@@ -56,8 +71,8 @@ namespace PracticaLaboratorio2.Vista.Usuarios
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Clase.Usuario usuarioActual = new Clase.Usuario();
-            Clase.Usuario usuarioNuevo = new Clase.Usuario();
+            Usuario usuarioActual = new Usuario();
+            Usuario usuarioNuevo = new Usuario();
             
             if (txtUsuario.Text != "" || txtClave.Text != "" || txtPerfil.Text != "") 
             {
@@ -68,8 +83,10 @@ namespace PracticaLaboratorio2.Vista.Usuarios
                 usuarioNuevo.Clave = txtClave.Text.ToLower();
                 usuarioNuevo.Perfil = txtPerfil.Text.ToLower();
 
-                if (new LogicaUsuario().EditarUsuario(usuarioActual, usuarioNuevo)) 
+                if (logicaUsuario.EditarUsuario(usuarioActual, usuarioNuevo)) 
                 {
+                    logicaUsuario.EditarUsuarioTablaEstudiante(usuarioActual, usuarioNuevo);
+                    user = txtUsuario.Text.ToLower();
                     txtUsuario.Text = "";
                     txtClave.Text = "";
                     txtPerfil.Text = "";
