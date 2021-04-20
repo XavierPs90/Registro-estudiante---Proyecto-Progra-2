@@ -44,13 +44,14 @@ namespace PracticaLaboratorio2.Vista.Herramientas
             this.dataGridViewEstudiantes = new System.Windows.Forms.DataGridView();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.checkBoxTodos = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEstudiantes)).BeginInit();
             this.SuspendLayout();
             // 
             // checkBoxCedula
             // 
             this.checkBoxCedula.AutoSize = true;
-            this.checkBoxCedula.Location = new System.Drawing.Point(71, 101);
+            this.checkBoxCedula.Location = new System.Drawing.Point(119, 101);
             this.checkBoxCedula.Name = "checkBoxCedula";
             this.checkBoxCedula.Size = new System.Drawing.Size(59, 17);
             this.checkBoxCedula.TabIndex = 0;
@@ -60,7 +61,7 @@ namespace PracticaLaboratorio2.Vista.Herramientas
             // checkBoxNombre
             // 
             this.checkBoxNombre.AutoSize = true;
-            this.checkBoxNombre.Location = new System.Drawing.Point(146, 101);
+            this.checkBoxNombre.Location = new System.Drawing.Point(194, 101);
             this.checkBoxNombre.Name = "checkBoxNombre";
             this.checkBoxNombre.Size = new System.Drawing.Size(63, 17);
             this.checkBoxNombre.TabIndex = 1;
@@ -70,7 +71,7 @@ namespace PracticaLaboratorio2.Vista.Herramientas
             // checkBoxEdad
             // 
             this.checkBoxEdad.AutoSize = true;
-            this.checkBoxEdad.Location = new System.Drawing.Point(228, 101);
+            this.checkBoxEdad.Location = new System.Drawing.Point(276, 101);
             this.checkBoxEdad.Name = "checkBoxEdad";
             this.checkBoxEdad.Size = new System.Drawing.Size(51, 17);
             this.checkBoxEdad.TabIndex = 2;
@@ -80,9 +81,9 @@ namespace PracticaLaboratorio2.Vista.Herramientas
             // checkBoxUsuario
             // 
             this.checkBoxUsuario.AutoSize = true;
-            this.checkBoxUsuario.Location = new System.Drawing.Point(296, 101);
+            this.checkBoxUsuario.Location = new System.Drawing.Point(344, 101);
             this.checkBoxUsuario.Name = "checkBoxUsuario";
-            this.checkBoxUsuario.Size = new System.Drawing.Size(62, 17);
+            this.checkBoxUsuario.Size = new System.Drawing.Size(69, 17);
             this.checkBoxUsuario.TabIndex = 3;
             this.checkBoxUsuario.Text = "Matricula";
             this.checkBoxUsuario.UseVisualStyleBackColor = true;
@@ -90,7 +91,7 @@ namespace PracticaLaboratorio2.Vista.Herramientas
             // checkBoxCurso
             // 
             this.checkBoxCurso.AutoSize = true;
-            this.checkBoxCurso.Location = new System.Drawing.Point(375, 101);
+            this.checkBoxCurso.Location = new System.Drawing.Point(423, 101);
             this.checkBoxCurso.Name = "checkBoxCurso";
             this.checkBoxCurso.Size = new System.Drawing.Size(53, 17);
             this.checkBoxCurso.TabIndex = 4;
@@ -100,7 +101,7 @@ namespace PracticaLaboratorio2.Vista.Herramientas
             // checkBoxPeriodo
             // 
             this.checkBoxPeriodo.AutoSize = true;
-            this.checkBoxPeriodo.Location = new System.Drawing.Point(445, 101);
+            this.checkBoxPeriodo.Location = new System.Drawing.Point(493, 101);
             this.checkBoxPeriodo.Name = "checkBoxPeriodo";
             this.checkBoxPeriodo.Size = new System.Drawing.Size(62, 17);
             this.checkBoxPeriodo.TabIndex = 5;
@@ -110,7 +111,7 @@ namespace PracticaLaboratorio2.Vista.Herramientas
             // checkBoxFecha
             // 
             this.checkBoxFecha.AutoSize = true;
-            this.checkBoxFecha.Location = new System.Drawing.Point(524, 101);
+            this.checkBoxFecha.Location = new System.Drawing.Point(572, 101);
             this.checkBoxFecha.Name = "checkBoxFecha";
             this.checkBoxFecha.Size = new System.Drawing.Size(116, 17);
             this.checkBoxFecha.TabIndex = 6;
@@ -186,12 +187,23 @@ namespace PracticaLaboratorio2.Vista.Herramientas
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
             // 
+            // checkBoxTodos
+            // 
+            this.checkBoxTodos.AutoSize = true;
+            this.checkBoxTodos.Location = new System.Drawing.Point(39, 101);
+            this.checkBoxTodos.Name = "checkBoxTodos";
+            this.checkBoxTodos.Size = new System.Drawing.Size(56, 17);
+            this.checkBoxTodos.TabIndex = 15;
+            this.checkBoxTodos.Text = "Todos";
+            this.checkBoxTodos.UseVisualStyleBackColor = true;
+            // 
             // FormBuscador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.checkBoxTodos);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.dataGridViewEstudiantes);
@@ -233,5 +245,6 @@ namespace PracticaLaboratorio2.Vista.Herramientas
         private System.Windows.Forms.DataGridView dataGridViewEstudiantes;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.CheckBox checkBoxTodos;
     }
 }
